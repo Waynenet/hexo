@@ -1,0 +1,67 @@
+name: 自动部署
+# 当有改动推送到main分支时，启动Action
+on:
+  push:
+    branches:
+      - main
+      #2020年10月后github新建仓库默认分支改为main，注意更改
+  release:
+    types:
+      - published
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 检查分支
+      uses: actions/checkout@v2
+      with:
+        ref: main
+
+    - name: 安装 Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: "16.x"
+
+    - name: 安装 Hexo
+      run: |
+        export TZ='Asia/Shanghai'
+        npm install hexo-cli -g
+
+    - name: 缓存 Hexo
+      uses: actions/cache@v1
+      id: cache
+      with:
+        path: node_modules
+        key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+
+    - name: 安装依赖
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+        npm install hexo-butterfly-douban
+        npm install --global gulp-cli
+        npm install gulp --save
+        npm install gulp-htmlclean --save-dev
+        npm install gulp-html-minifier-terser --save-dev
+        npm install gulp-clean-css --save-dev
+        npm install gulp-terser --save-dev
+        npm install gulp-fontmin --save-dev
+        npm install workbox-build --save
+
+    - name: 生成静态文件
+      run: |
+        hexo clean
+        hexo generate
+        hexo douban
+        gulp
+        gulp pwa
+
+    - name: 部署 #此处main:main 指从本地的main分支提交到远程仓库的main分支，若远程仓库没有对应分支则新建一个。如有其他需要，可以根据自己的需求更改。
+      run: |
+        cd ./public
+        git init
+        git config --global user.name 'Wayne'
+        git config --global user.email 'waynenet8@gmail'
+        git add .
+        git commit -m "${{ github.event.head_commit.message }} $(date +"%Z %Y-%m-%d %A %H:%M:%S") Updated By Github Actions"
+        git push --force --quiet "https://Waynenet:${{ secrets.GITHUBTOKEN }}@github.com/Waynenet/Waynenet.github.io.git" main:main
