@@ -50,7 +50,7 @@ social:
    fas fa-envelope: mailto:wuw@gmx.com || Email
    fab fa-telegram: https://t.me/Wayne_Wu || Telegram
    fab fa-twitter: https://twitter.com/Wayne3301 || Twitter
-   fab fa-youtube: https://www.youtube.com/channel/UCPEKdqBXXgij_9byYzp-oag || Youtube
+   fas fa-rss: https://ggyy.ga/atom.xml || RSS
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統

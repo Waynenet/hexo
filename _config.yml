@@ -143,3 +143,18 @@ githubcalendar:
   # api: https://python-gitee-calendar-api.vercel.app/api
   calendar_js: https://npm.elemecdn.com/wayne-img@latest/js/hexo_githubcalendar.js
   plus_style: ""
+
+
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 100
+  content_limit_delim: ' '
+  order_by: -date
+  icon: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/logo.png
+  autodiscovery: true
+  template:
