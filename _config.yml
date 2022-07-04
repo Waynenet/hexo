@@ -103,7 +103,7 @@ douban:
     quote: 'The collision between dream and reality.'
     meta: true
     comments: true
-    top_img: https://fastly.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/movie.jpg
+    top_img: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/wallhaven-0w2de6.jpg
     aside: true
     path: movies
     limit:
