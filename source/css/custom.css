@@ -57,16 +57,16 @@
 
 /* 更换字体 */
 @font-face {
-    font-family: 'jiangxi';
+    font-family: 'AaBanRuoKaiShu-2';
     /* 字体名自定义即可 */
-    src: url('/fontdest/jiangxi.ttf');
+    src: url('/fontdest/AaBanRuoKaiShu-2.ttf');
     /* 字体文件路径 */
     font-display: swap;
 }
 
 body,
 .gitcalendar {
-    font-family: jiangxi !important;
+    font-family: AaBanRuoKaiShu-2 !important;
 }
 
 /* 透明度修改 */
