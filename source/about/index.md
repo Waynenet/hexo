@@ -2,7 +2,7 @@
 title: 关于
 date: 2022-06-23 23:42:49
 aside: false
-top_img: https://fastly.jsdelivr.net/gh/Waynenet/blog-image-bed@main/blog/imgs/sea-7252122_1920.jpg
+top_img: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/sea-7252122_1920.jpg
 ---
 
 ![Welcome](https://api.vvhan.com/api/ip)

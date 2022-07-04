@@ -9,7 +9,7 @@ categories:
 cover: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/%E5%A4%B4%E5%83%8F%E4%B8%8A%E4%BC%A0.png
 abbrlink: '58020825'
 date: 2021-06-29 23:57:13
-updated: 2021-09-04 23:57:13
+updated: 2022-07-03 15:43:54
 ---
 
 ## <div style="color:#ff6c6c;">avatarUpload插件</div>

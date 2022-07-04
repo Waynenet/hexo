@@ -956,7 +956,7 @@ CDN:
     # gitalk:
     # gitalk_css:
     # blueimp_md5:
-    # valine: https://npm.elemecdn.com/wayne-img@latest/js/valine.min.js
+    # valine:
     # disqusjs:
     # disqusjs_css:
     # twikoo:
