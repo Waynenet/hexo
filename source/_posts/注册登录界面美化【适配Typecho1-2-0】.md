@@ -8,7 +8,7 @@ categories:
 cover: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/%E6%88%90%E6%95%88%E5%9B%BE1.jpg
 abbrlink: dad754bb
 date: 2021-06-26 00:07:00
-updated: 2022-07-03 15:43:48
+updated: 2022-06-24 20:27:03
 ---
 
  　　`Typecho-Login`一个Typecho后台登录界面美化文件，由博客主Mark发表在自己的博客网站上。

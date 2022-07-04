@@ -11,13 +11,31 @@
 
 [data-theme='light'] ::-webkit-scrollbar-thumb {
     background-color: rgb(0 191 255 / .3);
-    background-image: -webkit-linear-gradient(45deg, rgba(0,191,255, 0.1) 25%, transparent 25%, transparent 50%, rgba(0,191,255, 0.1) 50%, rgba(0,191,255, 0.1) 75%, transparent 75%, transparent);
+    background-image: -webkit-linear-gradient(
+      45deg, 
+      rgba(0,191,255, 0.4) 25%, 
+      transparent 25%, 
+      transparent 50%, 
+      rgba(0,191,255, 0.4) 50%, 
+      rgba(0,191,255, 0.4) 75%, 
+      transparent 75%, 
+      transparent
+    );
     border-radius: 2em
 }
 
 [data-theme='dark'] ::-webkit-scrollbar-thumb {
     background-color: rgb(255 255 255 / .3);
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+    background-image: -webkit-linear-gradient(
+      45deg, 
+      rgba(255, 255, 255, 0.1) 25%, 
+      transparent 25%, 
+      transparent 50%, 
+      rgba(255, 255, 255, 0.1) 50%, 
+      rgba(255, 255, 255, 0.1) 75%, 
+      transparent 75%, 
+      transparent
+    );
     border-radius: 2em
 }
 
@@ -25,7 +43,7 @@
     background-color: transparent
 }
 
-/* 背景宇宙星光  */
+/* 背景宇宙星光 */
 #universe{
     display: block;
     position: fixed;
@@ -101,31 +119,31 @@ body,
 
 /* 首页文章卡片 */
 [data-theme='light'] #recent-posts > .recent-post-item{
-    background:rgba(255, 255, 255, 0.6);
+    background:rgba(255, 255, 255, 0);
 }
 /* 首页侧栏卡片 */
 [data-theme='light'] .card-widget{
-  background:rgba(255, 255, 255, 0.6)!important;
+  background:rgba(255, 255, 255, 0)!important;
 }
 /* 文章页面正文背景 */
 [data-theme='light'] div#post{
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0);
 }
 /* 分页页面 */
 [data-theme='light'] div#page{
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0);
 }
 /* 归档页面 */
 [data-theme='light'] div#archive{
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0);
 }
 /* 标签页面 */
 [data-theme='light'] div#tag{
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0);
 }
 /* 分类页面 */
 [data-theme='light'] div#category{
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0);
 }
 
 /* 手机侧栏菜单 */

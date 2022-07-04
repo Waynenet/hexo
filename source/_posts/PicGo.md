@@ -9,7 +9,7 @@ categories:
   - 建站技巧
 abbrlink: cfbb1853
 date: 2021-09-13 21:25:53
-updated: 2022-07-03 15:44:03
+updated: 2021-09-13 21:25:53
 ---
 PicGo: 一个用于快速上传图片并获取图片 URL 链接的工具
 
