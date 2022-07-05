@@ -134,7 +134,7 @@ githubcalendar:
   pc_minheight: 280px
   mobile_minheight: 0px
   # 以下色调选择喜欢的一行保留即可。其余注释。
-  color: "['#979A9A', '#00EFFF', '#00FFAD', '#00FF4B', '#0CFF00', '#68FF00', '#B7FF00', '#F6FF00', '#FFC700', '#FF8B00', '#FF5400']"
+  color: "['#979A9A', '#00EFFF', '#00FFFC', '#00FFBB', '#0CFF00', '#68FF00', '#B7FF00', '#F6FF00', '#FFC700', '#FF8B00', '#FF5400']"
   # color: "['#979A9A', '#78D2AB', '#59E0A5', '#3FECA0', '#24F59A', '#00FF8D', '#00FF2B', '#2FFF00', '#63FF00', '#99FF00', '#E8FF00']"
   # color: "['#788A82', '#6AA78C', '#60B48F', '#55C694', '#45D394', '#37DD93', '#2DE594', '#21EB92', '#17F191', '#0DF78F', '#00FF8E']"
   # color: "['#e4dfd7', '#f9f4dc', '#f7e8aa', '#f7e8aa', '#f8df72', '#fcd217', '#fcc515', '#f28e16', '#fb8b05', '#d85916', '#f43e06']" #橘黄色调

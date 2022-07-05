@@ -63,15 +63,33 @@
 [data-theme='light'] #recent-posts>.recent-post-item,.layout_page>div:first-child:not(.recent-posts),.layout_post>#page,.layout_post>#post,.read-mode .layout_post>#post {
     background: var(--light_bg_color)
 }
-
+*/
 [data-theme='light'] #aside-content .card-widget {
     background: var(--light_bg_color)
 }
 
-[data-theme='light'] #web_bg {
+/*[data-theme='light'] #body-wrap {
     background: linear-gradient(90deg,rgba(247,149,51,.1),rgba(243,112,85,.1) 15%,rgba(239,78,123,.1) 30%,rgba(161,102,171,.1) 44%,rgba(80,115,184,.1) 58%,rgba(16,152,173,.1) 72%,rgba(7,179,155,.1) 86%,rgba(109,186,130,.1))
+}*/
+
+/* 动态渐变 */
+@keyframes gradientBG {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
-*/
+[data-theme='light'] #body-wrap {
+  background: linear-gradient(-45deg, rgba(247,149,51,.2), rgba(239,78,123,.2), rgba(16,152,173,.2), rgba(109,186,130,.2));
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
 
 /* 更换字体 */
 @font-face {
@@ -88,7 +106,7 @@ body,
 }
 
 /* 透明度修改 */
-/* 首页文章卡片 */
+/* 首页文章卡片 
 [data-theme='dark'] #recent-posts > .recent-post-item{
     background:rgba(13, 13, 13, 0);
 }
@@ -117,11 +135,11 @@ body,
   background: rgba(13, 13, 13, 0);
 }
 
-/* 首页文章卡片 */
+/* 首页文章卡片 
 [data-theme='light'] #recent-posts > .recent-post-item{
-    background:rgba(255, 255, 255, 0);
+    background:rgba(255, 255, 255, 0)!important;
 }
-/* 首页侧栏卡片 */
+/* 首页侧栏卡片 
 [data-theme='light'] .card-widget{
   background:rgba(255, 255, 255, 0)!important;
 }
