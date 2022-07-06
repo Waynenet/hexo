@@ -227,3 +227,14 @@ body,
         #sidebar-menus{
         background: linear-gradient(60deg, #2c0c16 0%, #043749 100%);
         }
+
+/* twikoo评论表情尺寸修改 */
+#twikoo .OwO-body .OwO-items-menhera .OwO-item {
+  font-size: 30px;
+  line-height: 19px;
+}
+.tk-owo-emotion {
+  /* 这里可以定义发表后的图片表情大小 */
+  width: auto !important;
+  height: auto !important;
+}
