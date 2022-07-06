@@ -12,6 +12,7 @@ menu:
      #音乐: /music/ || fas fa-music
    影单: /movies/ || fas fa-video
    书单: /books/ || fas fa-book
+   歌单: /music/ || fas fa-music
    留言: /comments/ || fas fa-comment
    #友链: /link/ || fas fa-link
    关于: /about/ || fas fa-heart
@@ -142,56 +143,106 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.25/img_2021-02-19_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.15/img_2020-01-03_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.35/img_2021-03-26_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.36/img_2021-03-20_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.25/img_2021-02-26_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.35/img_2021-03-05_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.114/img_2019-11-28_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.103/img_2019-10-30_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.32/img_2021-03-30_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.116/img_2019-11-16_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.115/img_2019-11-15_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.22/img_2021-02-23_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.12/img_2020-01-28_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.32/img_2021-03-16_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.10/img_2021-01-10_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.61/img_2021-06-21_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.16/img_2021-01-09_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.101/img_2019-10-21_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.106/img_2019-10-19_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.115/img_2019-11-22_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.91/img_2019-09-23_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.76/img_2019-07-13_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.41/img_2020-04-20_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.56/img_2020-05-09_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.23/img_2020-02-26_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.75/img_2020-07-17_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.74/img_2019-07-11_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.111/img_2020-11-02_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.94/img_2019-09-19_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.51/img_2020-05-04_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.52/img_2020-05-19_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.11/img_2020-01-06_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.121/img_2019-12-02_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.43/img_2020-04-29_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.60/img_2019-06-30_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.33/img_2020-03-11_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.24/img_2021-02-18_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.43/img_2020-04-08_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.46/img_2021-04-24_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.103/img_2019-10-02_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.115/img_2019-11-08_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.40/img_2021-04-11_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.74/img_2020-07-09_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.22/img_2021-02-09_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.62/img_2020-06-02_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.121.32/img_2021-03-16_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.120.35/img_2020-03-20_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.123/img_2019-12-25_1920x1080_96_background_normal.jpg
-    - https://unpkg.com/ushio-api-img-wallpaper@1.119.72/img_2019-07-16_1920x1080_96_background_normal.jpg
-    # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=1 #高清壁纸
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=2
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=3
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=4
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=5
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=6
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=7
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=8
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=9
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=10
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=11
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=12
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=13
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=14
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=15
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=16
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=17
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=18
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=19
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=20
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=21
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=22
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=23
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=24
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=25
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=26
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=27
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=28
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=29
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=30
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=31
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=32
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=33
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=34
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=35
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=36
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=37
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=38
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=39
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=40
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=41
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=42
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=43
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=44
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=45
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=46
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=47
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=48
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=49
+    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=50
+    # - https://api.ixiaowai.cn/mcapi/mcapi.php #mc酱动漫
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.25/img_2021-02-19_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.15/img_2020-01-03_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.35/img_2021-03-26_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.36/img_2021-03-20_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.25/img_2021-02-26_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.35/img_2021-03-05_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.114/img_2019-11-28_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.103/img_2019-10-30_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.32/img_2021-03-30_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.116/img_2019-11-16_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.115/img_2019-11-15_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.22/img_2021-02-23_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.12/img_2020-01-28_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.32/img_2021-03-16_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.10/img_2021-01-10_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.61/img_2021-06-21_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.16/img_2021-01-09_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.101/img_2019-10-21_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.106/img_2019-10-19_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.115/img_2019-11-22_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.91/img_2019-09-23_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.76/img_2019-07-13_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.41/img_2020-04-20_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.56/img_2020-05-09_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.23/img_2020-02-26_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.75/img_2020-07-17_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.74/img_2019-07-11_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.111/img_2020-11-02_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.94/img_2019-09-19_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.51/img_2020-05-04_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.52/img_2020-05-19_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.11/img_2020-01-06_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.121/img_2019-12-02_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.43/img_2020-04-29_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.60/img_2019-06-30_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.33/img_2020-03-11_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.24/img_2021-02-18_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.43/img_2020-04-08_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.46/img_2021-04-24_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.103/img_2019-10-02_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.115/img_2019-11-08_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.40/img_2021-04-11_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.74/img_2020-07-09_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.22/img_2021-02-09_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.62/img_2020-06-02_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.121.32/img_2021-03-16_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.120.35/img_2020-03-20_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.123/img_2019-12-25_1920x1080_96_background_normal.jpg
+    # - https://unpkg.com/ushio-api-img-wallpaper@1.119.72/img_2019-07-16_1920x1080_96_background_normal.jpg
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
@@ -806,9 +857,9 @@ darkmode:
 # Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
 # Don't repeat 不要重複
 rightside_item_order:
-  enable: false
-  hide: # readmode,translate,darkmode,hideAside
-  show: # toc,chat,comment
+  enable: true
+  hide: readmode,translate,hideAside # readmode,translate,darkmode,hideAside
+  show: toc,chat,comment,darkmode # toc,chat,comment
 
 # Lightbox (圖片大圖查看模式)
 # --------------------------------------
@@ -857,12 +908,12 @@ note:
 pjax:
   enable: true
   exclude:
-    # - xxxx
+    - /music/
     # - xxxx
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
-  enable: false
+  enable: true
   per_page: true
 
 # Snackbar (Toast Notification 彈窗)

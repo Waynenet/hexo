@@ -9,7 +9,7 @@ categories:
   - 建站技巧
 abbrlink: 2e306ea6
 date: 2021-09-11 10:05:19
-updated: 2021-09-11 10:05:19
+updated: 2021-09-11 12:51:19
 ---
 Typecho后台设置永久链接后，会在域名后加上index.php，很多人都接受不了。那么我们如何去掉index.php呢？
 
