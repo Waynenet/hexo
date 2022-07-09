@@ -9,7 +9,6 @@ menu:
      标签: /tags/ || fas fa-tags
      分类: /categories/ || fas fa-folder-open
    #娱乐||fas fa-list||hide:
-     #音乐: /music/ || fas fa-music
    影单: /movies/ || fas fa-video
    书单: /books/ || fas fa-book
    歌单: /music/ || fas fa-music
