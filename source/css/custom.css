@@ -140,6 +140,22 @@
 [data-theme='light'] div#category{
   background: rgba(255, 255, 255, 0);
 }
+/* 侧栏作者卡片 */
+/* button栏 */
+#card-info-btn{
+  margin-top: 5px !important;
+  background-color: var(--light_bg_color) !important;
+  color: var(--font-color) !important;
+}
+  span{
+    padding-left: 0 !important; /* 去除左边图标空间，使文本居中 */
+  }
+/* solgan格式修改 */
+#aside-content
+  .card-info
+    .author-info__description{
+        margin-top: 0.3em !important;
+    }
 
 /* 更换字体 */
 @font-face {
