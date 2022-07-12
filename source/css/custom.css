@@ -157,6 +157,18 @@
         margin-top: 0.3em !important;
     }
 
+/* 移动端目录背景 */
+@media screen and (max-width: 900px) {
+  [data-theme='light']
+    #card-toc {
+      background: linear-gradient(60deg, #ffd7e4 0%, #c8f1ff 100%) !important;
+    }
+  [data-theme='dark']
+    #card-toc {
+      background: linear-gradient(60deg, #2c0c16 0%, #043749 100%) !important;
+    }
+}
+
 /* 更换字体 */
 @font-face {
   font-family: 'AaBanRuoKaiShu-2';
