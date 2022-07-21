@@ -95,28 +95,28 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/logo.png
+favicon: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/logo.png
 
 # Avatar (頭像)
 avatar:
-  img: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/logo.png
+  img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/logo.png
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/astronaut-7272286_1920.jpg
+index_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/astronaut-7272286_1920.jpg
 
 # If the banner of page not setting, it will show the top_img
 default_top_img:
 
 # The banner image of archive page
-archive_img: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/wallhaven-e7ek7k.jpg
+archive_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/wallhaven-e7ek7k.jpg
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/space-g9b0bacdf3_1920.jpg
+tag_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/space-g9b0bacdf3_1920.jpg
 
 # The banner image of tag page
 # format:
@@ -125,7 +125,7 @@ tag_per_img:
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/ink-gaf20d4ee0_1920.jpg
+category_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/ink-gaf20d4ee0_1920.jpg
 
 # The banner image of category page
 # format:
@@ -999,10 +999,10 @@ CDN:
 envelope_comment:
   enable: true #控制开关
   custom_pic:      
-    cover: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg #信笺头部图片
-    line: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png #信笺底部图片
-    beforeimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png # 信封前半部分
-    afterimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png # 信封后半部分
+    cover: https://cdn.jsdelivr.net/npm/hexo-butterfly-envelope/lib/violet.jpg #信笺头部图片
+    line: https://cdn.jsdelivr.net/npm/hexo-butterfly-envelope/lib/line.png #信笺底部图片
+    beforeimg: https://cdn.jsdelivr.net/npm/hexo-butterfly-envelope/lib/before.png # 信封前半部分
+    afterimg: https://cdn.jsdelivr.net/npm/hexo-butterfly-envelope/lib/after.png # 信封后半部分
   message: #信笺正文，多行文本，写法如下
     - 有什么想问的？
     - 有什么想说的？
@@ -1014,7 +1014,7 @@ envelope_comment:
   front_matter: #【可选】comments页面的 front_matter 配置
     title: 留言板
     comments: true
-    top_img: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/wallhaven-8oy372.jpg
+    top_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/wallhaven-8oy372.jpg
     aside: false
 
 # tag-plugins-plus
@@ -1026,9 +1026,9 @@ tag_plugins:
   link:
     placeholder: /img/link.png #link_card标签默认的图标图片
   CDN:
-    anima: #https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
-    jquery: #https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js #issues标签依赖
-    issues: #https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
+    anima: #https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
+    jquery: #https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js #issues标签依赖
+    issues: #https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
     iconfont: false #//at.alicdn.com/t/font_2032782_8d5kxvn09md.js #参看https://akilar.top/posts/d2ebecef/
-    carousel: false #https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
-    tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@1.0.17/lib/tag_plugins.css
+    carousel: false #https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
+    tag_plugins_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@1.0.17/lib/tag_plugins.css

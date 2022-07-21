@@ -94,7 +94,7 @@ douban:
     quote: 'One who is filled with knowledge always behaves with elegance.'
     meta: true
     comments: true
-    top_img: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/2.jpg
+    top_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/2.jpg
     aside: true
     path: books
     limit:
@@ -103,7 +103,7 @@ douban:
     quote: 'The collision between dream and reality.'
     meta: true
     comments: true
-    top_img: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/wallhaven-0w2de6.jpg
+    top_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/wallhaven-0w2de6.jpg
     aside: true
     path: movies
     limit:
@@ -143,7 +143,7 @@ githubcalendar:
   # color: "['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c']" #天青色调
   api: https://python-github-calendar-api.vercel.app/api
   # api: https://python-gitee-calendar-api.vercel.app/api
-  calendar_js: https://npm.elemecdn.com/wayne-img@latest/js/hexo_githubcalendar.js
+  calendar_js: https://cdn.jsdelivr.net/npm/wayne-img@latest/js/hexo_githubcalendar.js
   plus_style: ""
 
 
@@ -157,7 +157,7 @@ feed:
   content_limit: 100
   content_limit_delim: ' '
   order_by: -date
-  icon: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/logo.png
+  icon: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/logo.png
   autodiscovery: true
   template:
 
