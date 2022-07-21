@@ -37,7 +37,6 @@ jobs:
 
     - name: 生成静态文件
       run: |
-        hexo clean
         hexo generate
         hexo douban
         gulp
