@@ -3,7 +3,7 @@
   link_list:
     - name: WayneのBlog
       link: https://ggyy.ga/
-      avatar: https://fastly.jsdelivr.net/gh/Waynenet/blog-image-bed@main/blog/imgs/logo.png
+      avatar: https://cdn.jsdelivr.net/gh/Waynenet/blog-image-bed@main/blog/imgs/logo.png
       descr: 个人博客
 - class_name: 网站
   class_desc: 值得推荐的网站
