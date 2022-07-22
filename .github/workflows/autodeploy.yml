@@ -35,6 +35,19 @@ jobs:
         path: node_modules
         key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
 
+    - name: 安装依赖
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+        npm install hexo-butterfly-douban
+        npm install --global gulp-cli
+        npm install gulp --save
+        npm install gulp-htmlclean --save-dev
+        npm install gulp-html-minifier-terser --save-dev
+        npm install gulp-clean-css --save-dev
+        npm install gulp-terser --save-dev
+        npm install gulp-fontmin --save-dev
+        npm install workbox-build --save
+
     - name: 生成静态文件
       run: |
         hexo clean
