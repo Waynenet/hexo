@@ -116,7 +116,7 @@ douban:
    # aside: true
    # path: games
    # limit:
-  timeout: 10000 
+  timeout: 20000 
 
 # Ice Kano Plus_in
 # Hexo Github Canlendar
