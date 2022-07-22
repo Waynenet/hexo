@@ -99,8 +99,8 @@ douban:
     path: books
     limit:
   movie:
-    title: '梦想与现实的碰撞'
-    quote: 'The collision between dream and reality.'
+    title: '人生如戏，戏如人生'
+    quote: 'Life is like a drama,drama is like life.'
     meta: true
     comments: true
     top_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/wallhaven-0w2de6.jpg
