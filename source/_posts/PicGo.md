@@ -1,7 +1,7 @@
 ---
 title: PicGo——图片上传+管理新体验
 cover: >-
-  https://npm.elemecdn.com/wayne-img@latest/blog/imgs/PicGo.png
+  https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/PicGo.png
 tags:
   - 软件
 categories:
@@ -23,7 +23,7 @@ PicGo 本体支持如下图床：
 - 阿里云 OSS v1.6.0
 - Imgur v1.6.0
 
- ![PicGo](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/PicGo.png) 
+ ![PicGo](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/PicGo.png) 
 
 ## 新版变化
 Molunerfinn/PicGo

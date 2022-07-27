@@ -127,9 +127,9 @@ updated: 2021-09-11 12:51:54
 - 2.框1向左浮动
 - 3.所有三个框向左浮动
 
- ![css1](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/css1.png) 
-  ![css2](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/css2.png) 
-   ![css3](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/css3.png) 
+ ![css1](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/css1.png) 
+  ![css2](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/css2.png) 
+   ![css3](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/css3.png) 
 
 - 清除浮动
 

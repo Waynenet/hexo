@@ -1,7 +1,7 @@
 ---
 title: 灵魂的伴侣
 date: 2022-07-06 00:13:04
-top_img: https://npm.elemecdn.com/wayne-img@latest/blog/imgs/wallhaven-43d9lv.jpg
+top_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/wallhaven-43d9lv.jpg
 aside: false
 aplayer: true
 ---

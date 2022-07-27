@@ -7,7 +7,7 @@ categories:
   - 建站技巧
 abbrlink: 678d5c01
 date: 2021-08-28 12:39:14
-updated: 2022-07-05 12:39:14
+updated: 2022-07-12 16:43:06
 cover:
 description:
 ---
@@ -27,7 +27,7 @@ Flexbox 是 flexible box 的简称（注：意思是“灵活的盒子容器”�
 
 采用 Flex 布局的元素，称为 Flex 容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称"项目"。
 
-![Flexbox](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/flex1.png) 
+![Flexbox](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/flex1.png) 
 
 在 Flexbox 模型中，有三个核心概念：
 - flex 项（注：也称 flex 子元素），需要布局的元素
@@ -36,7 +36,7 @@ Flexbox 是 flexible box 的简称（注：意思是“灵活的盒子容器”�
 
 # 容器属性
 
-![容器属性](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/flex2.png)
+![容器属性](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/flex2.png)
 
 ## flex-direction:
 
@@ -45,7 +45,7 @@ Flexbox 是 flexible box 的简称（注：意思是“灵活的盒子容器”�
 {% radio green, column：主轴为垂直方向，起点在上沿。 %}
 {% radio green, column-reverse：主轴为垂直方向，起点在下沿。 %}
 
-![flex-direction](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/flex3.png)
+![flex-direction](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/flex3.png)
 
 ## flex-wrap:
 
@@ -61,7 +61,7 @@ Flexbox 是 flexible box 的简称（注：意思是“灵活的盒子容器”�
 {% radio green, space-between：两端对齐，项目之间的间隔都相等。 %}
 {% radio green, space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。 %}
 
-![justify-content](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/flex4.gif)
+![justify-content](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/flex4.gif)
 
 ## align-items:
 
@@ -71,7 +71,7 @@ Flexbox 是 flexible box 的简称（注：意思是“灵活的盒子容器”�
 {% radio green, baseline: 项目的第一行文字的基线对齐。 %}
 {% radio green, stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。 %}
 
-![align-items](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/flex5.gif)
+![align-items](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/flex5.gif)
 
 ## align-content:
 
@@ -84,19 +84,19 @@ Flexbox 是 flexible box 的简称（注：意思是“灵活的盒子容器”�
 {% radio green, space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。 %}
 {% radio green, stretch（默认值）：轴线占满整个交叉轴。 %}
 
-![align-content](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/flex6.png)
+![align-content](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/flex6.png)
 
 ## 结合 `justify-content`和`align-items`，看看在 `flex-direction` 两个不同属性值的作用下，轴心有什么不同：
 
-![flex-direction](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/flex7.gif)
+![flex-direction](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/flex7.gif)
 
 # 项目属性
 
-![项目属性](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/flex8.png)
+![项目属性](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/flex8.png)
 
 ## order属性
 
-![order属性](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/flex9.png)
+![order属性](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/flex9.png)
 
 ## flex-grow属性
 
@@ -104,7 +104,7 @@ Flexbox 是 flexible box 的简称（注：意思是“灵活的盒子容器”�
 
 如果所有项目的`flex-grow`属性都为`1`，则它们将等分剩余空间（如果有的话）。如果一个项目的`flex-grow`属性为`2`，其他项目都为`1`，则前者占据的剩余空间将比其他项多一倍。
 
-![flex-grow属性](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/flex10.png)
+![flex-grow属性](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/flex10.png)
 
 ## flex-shrink属性
 
@@ -116,7 +116,7 @@ Flexbox 是 flexible box 的简称（注：意思是“灵活的盒子容器”�
 }
 ```
 
-![flex-shrink属性](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/flex11.jpg)
+![flex-shrink属性](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/flex11.jpg)
 
 如果所有项目的`flex-shrink`属性都为`1`，当空间不足时，都将等比例缩小。如果一个项目的`flex-shrink`属性为`0`，其他项目都为`1`，则空间不足时，前者不缩小。
 
@@ -132,6 +132,6 @@ Flexbox 是 flexible box 的简称（注：意思是“灵活的盒子容器”�
 }
 ```
 
-![align-self属性](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/flex12.png)
+![align-self属性](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/flex12.png)
 
 {% tip warning %}弹性布局默认不改变项目的宽度，但是它默认改变项目的高度。如果项目没有显式指定高度，就将占据容器的所有高度。{% endtip %}

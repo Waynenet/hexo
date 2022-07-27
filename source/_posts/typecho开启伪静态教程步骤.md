@@ -1,7 +1,7 @@
 ---
 title: typecho开启伪静态教程步骤
 cover: >-
-  https://npm.elemecdn.com/wayne-img@latest/blog/imgs/weijingtai.png
+  https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/weijingtai.png
 tags:
   - Typecho
 categories:
@@ -9,7 +9,7 @@ categories:
   - 建站技巧
 abbrlink: 2e306ea6
 date: 2021-09-11 10:05:19
-updated: 2021-09-11 12:51:19
+updated: 2021-09-11 20:26:22
 ---
 Typecho后台设置永久链接后，会在域名后加上index.php，很多人都接受不了。那么我们如何去掉index.php呢？
 
@@ -143,7 +143,7 @@ apache 配置:
 
 如图，在typecho后台，开启伪静态，并选择你喜好的url形式：
 
- ![伪静态](https://npm.elemecdn.com/wayne-img@latest/blog/imgs/weijingtai.png) 
+ ![伪静态](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/weijingtai.png) 
 
 具体操作，根据本人实际操作如下
 
