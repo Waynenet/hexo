@@ -4,9 +4,11 @@ cover: >-
   https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/PicGo.png
 tags:
   - 软件
+  - Windows
+  - Mac
 categories:
   - 日新月异
-  - 建站技巧
+  - 软件分享
 abbrlink: cfbb1853
 date: 2021-09-13 21:25:53
 updated: 2021-09-13 21:25:53
