@@ -494,7 +494,7 @@ footer:
 
 # Baidu Analytics
 # https://tongji.baidu.com/web/welcome/login
-baidu_analytics: b6baabbb5cd9ca38c9565bfd20e6c958
+baidu_analytics:
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
@@ -663,7 +663,7 @@ beautify:
 font:
   global-font-size:
   code-font-size:
-  font-family: AaBanRuoKaiShu-2, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "STZhongsong", "Lantinghei SC", sans-serif
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "STZhongsong", "Lantinghei SC", sans-serif
   code-font-family:
 
 # Font settings for the site title and site subtitle
@@ -717,7 +717,7 @@ aside:
     button:
       enable: true
       icon: #fas fa-star
-      text: 💗 Ctrl+D 收藏我的博客 💗
+      text: 💗 Ctrl + D 收藏我的博客 💗
       link: javascript:AddFavorite('https://ggyy.ga/', 'WayneのBlog') # https://github.com/Waynenet
   card_announcement:
     enable: true
