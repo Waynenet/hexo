@@ -1,44 +1,11 @@
 {
-  "_from": "hexo-theme-butterfly@4.3.1",
-  "_id": "hexo-theme-butterfly@4.3.1",
-  "_inBundle": false,
-  "_integrity": "sha512-/z9LtWBXYvdi4EW8q06NgFjPC2oT6JdwRF8VTi0x2uY98LDSPxbM5AB/0ZROCbxtNpIGGAdkti5d10L+38ZKBg==",
-  "_location": "/hexo-theme-butterfly",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "hexo-theme-butterfly@4.3.1",
-    "name": "hexo-theme-butterfly",
-    "escapedName": "hexo-theme-butterfly",
-    "rawSpec": "4.3.1",
-    "saveSpec": null,
-    "fetchSpec": "4.3.1"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/hexo-theme-butterfly/-/hexo-theme-butterfly-4.3.1.tgz",
-  "_shasum": "e757961133ecba1d58b8dce2d3cad95b3a18e9f7",
-  "_spec": "hexo-theme-butterfly@4.3.1",
-  "_where": "H:\\建站\\hexo\\blog",
-  "author": {
-    "name": "Jerry",
-    "email": "my@crazywong.com"
-  },
-  "bugs": {
-    "url": "https://github.com/jerryc127/hexo-theme-butterfly/issues",
-    "email": "my@crazywong.com"
-  },
-  "bundleDependencies": false,
-  "dependencies": {
-    "hexo-renderer-pug": "^3.0.0",
-    "hexo-renderer-stylus": "^2.1.0"
-  },
-  "deprecated": false,
+  "name": "hexo-theme-butterfly",
+  "version": "4.4.0",
   "description": "A Simple and Card UI Design theme for Hexo",
-  "homepage": "https://butterfly.js.org/",
+  "main": "package.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "keywords": [
     "hexo",
     "theme",
@@ -47,15 +14,19 @@
     "Jerry",
     "hexo-theme-butterfly"
   ],
-  "license": "Apache-2.0",
-  "main": "package.json",
-  "name": "hexo-theme-butterfly",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jerryc127/hexo-theme-butterfly.git"
+    "type" : "git",
+    "url" : "https://github.com/jerryc127/hexo-theme-butterfly.git"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bugs": {
+    "url": "https://github.com/jerryc127/hexo-theme-butterfly/issues",
+    "email": "my@crazywong.com"
   },
-  "version": "4.3.1"
+  "dependencies": {
+    "hexo-renderer-stylus": "^2.1.0",
+    "hexo-renderer-pug": "^3.0.0"
+  },
+  "homepage": "https://butterfly.js.org/",
+  "author": "Jerry <my@crazywong.com>",
+  "license": "Apache-2.0"
 }
