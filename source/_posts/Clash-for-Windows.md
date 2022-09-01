@@ -11,7 +11,7 @@ categories:
   - 软件分享
 abbrlink: cdbe1f5c
 date: 2021-09-11 15:43:45
-updated: 2022-08-20 22:38:13
+updated: 2022-08-27 22:38:13
 ---
 Clash，支持Windows、Android、MacOS、Linux等所有平台的免费开源网络代理工具，采用go语言开发，支持多种协议，包括SSR/v2ray/Trojan/Surge等协议，通过订阅机场提供的协议配置，从而获取大量服务器节点实现负载均衡，采用Clash API端口来配置和控制Clash核心程序，便于用户可视化操作和使用。
 
@@ -25,13 +25,12 @@ https://github.com/Fndroid/clash_for_windows_pkg/releases
 Premium Core - Dreamacro/clash Wiki · GitHub
 https://github.com/Dreamacro/clash/releases
 
-**2022.08.19 v0.19.27**
+Clash for Windows 更新至 0.19.29：
 
-- 更新 Electron
-- 增加一键添加防火墙规则（Windows）
-- 修复节点名过滤滞后问题
-- 修复某些情况下 Bypass Domain/IPNet 不显示问题（macOS）
-- 修复其他一些问题
+- 更新 Clash 核心至 v2022.08.26 Premium
+- 修复核心加载问题(macOS)
+- 修复上版本调整导致 System Proxy 开关问题
+- 修复其他一些小问题
 
 ## 汉化补丁
 
