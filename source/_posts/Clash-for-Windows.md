@@ -1,5 +1,5 @@
 ---
-title: Clash for Windows 0.19.27 Premium
+title: Clash for Windows
 cover: >-
   https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/clash.png
 tags:
