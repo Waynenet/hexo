@@ -123,7 +123,7 @@ douban:
 # Author: Ice Kano
 # Modify: Lete乐特
 githubcalendar:
-  enable: true
+  enable: false
   enable_page: /
   user: Waynenet
   layout:
