@@ -1,57 +1,41 @@
 ---
-title: Clash for Windows
+title: Clash for Android
 cover: >-
-  https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/clash.png
+  https://fastly.jsdelivr.net/gh/Waynenet/blog-image-bed@main/blog/imgs/clash-android.jpg
 tags:
   - 软件
-  - Windows
-  - Mac
+  - Android
 categories:
   - 日新月异
   - 软件分享
-abbrlink: cdbe1f5c
-date: 2021-09-11 15:43:45
-updated: 2022-12-10 22:38:13
+abbrlink: '7999190'
+date: 2021-09-13 20:51:59
+updated: 2022-12-10 21:33:00
 ---
 Clash，支持Windows、Android、MacOS、Linux等所有平台的免费开源网络代理工具，采用go语言开发，支持多种协议，包括SSR/v2ray/Trojan/Surge等协议，通过订阅机场提供的协议配置，从而获取大量服务器节点实现负载均衡，采用Clash API端口来配置和控制Clash核心程序，便于用户可视化操作和使用。
 
- ![clash](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/clash.png) 
+ ![clash android](https://fastly.jsdelivr.net/gh/Waynenet/blog-image-bed@main/blog/imgs/clash-android.jpg) 
 
 ## 新版变化
 
-Clash for Windows - Fndroid/clash_for_windows_pkg
-https://github.com/Fndroid/clash_for_windows_pkg/releases
+Clash For Android Premium - Kr328/ClashForAndroid
+https://github.com/Kr328/ClashForAndroid/releases
 
 Premium Core - Dreamacro/clash Wiki · GitHub
 https://github.com/Dreamacro/clash/releases
 
-Clash for Windows 更新至 0.20.10：
-
-- 更新 Clash 核心至 v2022.11.25 Premium
-- 支持 remote parser
-- 修复 schtasks 类型 Service Mode 在使用电池时异常退出问题（需卸载后安装一次 Service Mode）
-- 调整虚拟桌面下窗口显示行为（macOS）
-- 修复其他一些小问题
-
-## 汉化补丁
-
-[BoyceLig/Clash_Chinese_Patch](https://github.com/BoyceLig/Clash_Chinese_Patch)
-
-解压`app.7z`压缩包后，自行替换下列路径中的app.asar文件
-
-`Clash for Windows\resources\app.asar`
-
-## 使用说明
-
-https://docs.cfw.lbyczf.com/
+最终版 2.5.12
+更新日志
+1. 更新繁体中文翻译
+2. 降低 mtu 至 9000
 
 ## 下载地址
 
 {% btns rounded grid5 %}
-<a href='https://waynewu.lanzoui.com/b016rsxxe'>
+<a href='https://waynewu.lanzoui.com/b016rek2b'>
   <i class='fas fa-download'></i>
-  <b>Clash for Windows</b>
-  {% p blue, 蓝奏云|提取码：9923 %}
+  <b>Clash for Android</b>
+  {% p blue, 蓝奏云|提取码：aul0 %}
 </a>
 {% endbtns %}
 
