@@ -1,7 +1,7 @@
 ---
 title: Clash for Android
 cover: >-
-  https://fastly.jsdelivr.net/gh/Waynenet/blog-image-bed@main/blog/imgs/clash-android.jpg
+  https://gcore.jsdelivr.net/gh/Waynenet/blog-image-bed@main/blog/imgs/clash-android.jpg
 tags:
   - 软件
   - Android
@@ -14,7 +14,7 @@ updated: 2022-12-10 21:33:00
 ---
 Clash，支持Windows、Android、MacOS、Linux等所有平台的免费开源网络代理工具，采用go语言开发，支持多种协议，包括SSR/v2ray/Trojan/Surge等协议，通过订阅机场提供的协议配置，从而获取大量服务器节点实现负载均衡，采用Clash API端口来配置和控制Clash核心程序，便于用户可视化操作和使用。
 
- ![clash android](https://fastly.jsdelivr.net/gh/Waynenet/blog-image-bed@main/blog/imgs/clash-android.jpg) 
+ ![clash android](https://gcore.jsdelivr.net/gh/Waynenet/blog-image-bed@main/blog/imgs/clash-android.jpg) 
 
 ## 新版变化
 

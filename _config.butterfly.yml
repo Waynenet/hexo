@@ -1,33 +1,34 @@
-# Main menu navigation (導航目錄)
-# see https://butterfly.js.org/posts/4aa8abbe/#導航菜單
+# Navigation bar settings (導航欄設置)
+# see https://butterfly.js.org/posts/4aa8abbe/##導航欄設置-Navigation-bar-settings
 # --------------------------------------
-
-menu:
-   首页: / || fas fa-home
-   文章||fas fa-book||hide:
-     归档: /archives/ || fas fa-archive
-     标签: /tags/ || fas fa-tags
-     分类: /categories/ || fas fa-folder-open
-   #娱乐||fas fa-list||hide:
-   影单: /movies/ || fas fa-video
-   书单: /books/ || fas fa-book
-   歌单: /music/ || fas fa-music
-   留言: /comments/ || fas fa-comment
-   #友链: /link/ || fas fa-link
-   关于: /about/ || fas fa-heart
-   其它||fas fa-list-ul||hide:
-     WayneのHome: https://soga.ml/ || fas fa-house
-     WayneのNavigation: https://3301.ml/ || fas fa-globe
-     WayneのStart: https://start.dang.gq || fas fa-compass
-     WayneのMusic: https://music.dang.gq || fas fa-music
-     WayneのDrive: https://drive.soga.ml || fas fa-cloud
-     WayneのLab: https://lab.dang.gq || fas fa-flask
-     WayneのHouse: https://loving.tk/ || fas fa-heart-pulse
 
 nav:
   logo: # image
   display_title: true
   fixed: false # fixed navigation bar
+
+# Menu 目錄
+menu:
+  首页: / || fas fa-home
+  文章||fas fa-book||hide:
+    归档: /archives/ || fas fa-archive
+    标签: /tags/ || fas fa-tags
+    分类: /categories/ || fas fa-folder-open
+  #娱乐||fas fa-list||hide:
+  影单: /movies/ || fas fa-video
+  书单: /books/ || fas fa-book
+  歌单: /music/ || fas fa-music
+  留言: /comments/ || fas fa-comment
+  #友链: /link/ || fas fa-link
+  关于: /about/ || fas fa-heart
+  其它||fas fa-list-ul||hide:
+    WayneのHome: https://soga.ml/ || fas fa-house
+    WayneのNavigation: https://3301.ml/ || fas fa-globe
+    WayneのStart: https://start.dang.gq || fas fa-compass
+    WayneのMusic: https://music.dang.gq || fas fa-music
+    WayneのDrive: https://drive.soga.ml || fas fa-cloud
+    WayneのLab: https://lab.dang.gq || fas fa-flask
+    WayneのHouse: https://loving.tk/ || fas fa-heart-pulse
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -39,66 +40,15 @@ highlight_shrink: false # true: shrink the code blocks / false: expand the code 
 highlight_height_limit: false # unit: px
 code_word_wrap: false
 
-# copy settings
-# copyright: Add the copyright information after copied content (複製的內容後面加上版權信息)
-copy:
-  enable: true
-  copyright:
-    enable: true
-    limit_count: 50
-
-# social settings (社交圖標設置)
+# Social Settings (社交圖標設置)
 # formal:
-#   icon: link || the description
+#   icon: link || the description || color
 social:
-   fab fa-github: https://github.com/Waynenet || Github
-   fas fa-envelope: mailto:wuw@gmx.com || Email
-   fab fa-telegram: https://t.me/Wayne_Wu || Telegram
-   fab fa-twitter: https://twitter.com/Wayne3301 || Twitter
-   fas fa-rss: https://ggyy.ga/atom.xml || RSS
-
-# search (搜索)
-# see https://butterfly.js.org/posts/ceeb73f/#搜索系統
-# --------------------------------------
-
-# Algolia search
-algolia_search:
-  enable: false
-  hits:
-    per_page: 6
-
-# Local search
-local_search:
-  enable: true
-  preload: false
-  CDN:
-
-# Docsearch
-# https://docsearch.algolia.com/
-docsearch:
-  enable: false
-  appId:
-  apiKey:
-  indexName:
-  option:
-
-# Math (數學)
-# --------------------------------------
-# About the per_page
-# if you set it to true, it will load mathjax/katex script in each page (true 表示每一頁都加載js)
-# if you set it to false, it will load mathjax/katex script according to your setting (add the 'mathjax: true' in page's front-matter)
-# (false 需要時加載，須在使用的 Markdown Front-matter 加上 mathjax: true)
-
-# MathJax
-mathjax:
-  enable: false
-  per_page: false
-
-# KaTeX
-katex:
-  enable: false
-  per_page: false
-  hide_scrollbar: true
+   fab fa-github: https://github.com/Waynenet || Github || '#24292e'
+   fas fa-envelope: mailto:wuw@gmx.com || Email || '#4a7dbe'
+   fab fa-telegram: https://t.me/Wayne_Wu || Telegram || '#3895EE'
+   fab fa-twitter: https://twitter.com/Wayne3301 || Twitter || '#0F22F4'
+   fas fa-rss: https://ggyy.ga/atom.xml || RSS || '#1C8406'
 
 # Image (圖片設置)
 # --------------------------------------
@@ -151,56 +101,55 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=1
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=2
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=3
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=4
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=5
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=6
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=7
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=8
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=9
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=10
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=11
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=12
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=13
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=14
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=15
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=16
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=17
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=18
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=19
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=20
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=21
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=22
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=23
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=24
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=25
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=26
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=27
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=28
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=29
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=30
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=31
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=32
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=33
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=34
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=35
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=36
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=37
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=38
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=39
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=40
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=41
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=42
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=43
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=44
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=45
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=46
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=47
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=48
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=49
-    - https://api.ixiaowai.cn/gqapi/gqapi.php?spm=50
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.25/img_2021-02-19_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.15/img_2020-01-03_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.35/img_2021-03-26_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.36/img_2021-03-20_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.25/img_2021-02-26_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.35/img_2021-03-05_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.114/img_2019-11-28_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.103/img_2019-10-30_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.32/img_2021-03-30_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.116/img_2019-11-16_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.115/img_2019-11-15_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.22/img_2021-02-23_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.12/img_2020-01-28_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.32/img_2021-03-16_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.10/img_2021-01-10_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.61/img_2021-06-21_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.16/img_2021-01-09_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.101/img_2019-10-21_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.106/img_2019-10-19_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.115/img_2019-11-22_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.91/img_2019-09-23_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.76/img_2019-07-13_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.41/img_2020-04-20_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.56/img_2020-05-09_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.23/img_2020-02-26_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.75/img_2020-07-17_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.74/img_2019-07-11_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.111/img_2020-11-02_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.94/img_2019-09-19_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.51/img_2020-05-04_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.52/img_2020-05-19_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.11/img_2020-01-06_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.121/img_2019-12-02_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.43/img_2020-04-29_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.60/img_2019-06-30_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.33/img_2020-03-11_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.24/img_2021-02-18_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.43/img_2020-04-08_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.46/img_2021-04-24_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.103/img_2019-10-02_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.115/img_2019-11-08_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.40/img_2021-04-11_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.74/img_2020-07-09_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.22/img_2021-02-09_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.62/img_2020-06-02_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.121.32/img_2021-03-16_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.120.35/img_2020-03-20_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.123/img_2019-12-25_1920x1080_96_background_normal.jpg
+    - https://gcore.jsdelivr.net/npm/ushio-api-img-wallpaper@1.119.72/img_2019-07-16_1920x1080_96_background_normal.jpg
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
@@ -227,14 +176,6 @@ post_meta:
     tags: true # true or false 文章頁是否顯示標籤
     label: true # true or false 顯示描述性文字
 
-# wordcount (字數統計)
-# see https://butterfly.js.org/posts/ceeb73f/#字數統計
-wordcount:
-  enable: true
-  post_wordcount: true
-  min2read: true
-  total_wordcount: true
-
 # Display the article introduction on homepage
 # 1: description
 # 2: both (if the description exists, it will show description, or show the auto_excerpt)
@@ -251,6 +192,17 @@ anchor:
     always_show: false
     icon: # the unicode value of Font Awesome icon, such as '\3423'
   auto_update: false # when you scroll in post, the URL will update according to header id.
+
+# figcaption (圖片描述文字)
+photofigcaption: false
+
+# copy settings
+# copyright: Add the copyright information after copied content (複製的內容後面加上版權信息)
+copy:
+  enable: true
+  copyright:
+    enable: true
+    limit_count: 50
 
 # Post
 # --------------------------------------
@@ -296,9 +248,6 @@ related_post:
   limit: 6 # Number of posts displayed
   date_type: created # or created or updated 文章日期顯示創建日或者更新日
 
-# figcaption (圖片描述文字)
-photofigcaption: false
-
 # post_pagination (分頁)
 # value: 1 || 2 || false
 # 1: The 'next post' will link to old post
@@ -315,7 +264,183 @@ noticeOutdate:
   message_prev: 文章已超过
   message_next: 天没有更新，若内容或图片失效，请留言反馈。
 
-# Share System (分享功能)
+# Footer Settings
+# --------------------------------------
+footer:
+  owner:
+    enable: true
+    since: 2021
+  custom_text: I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p>
+  copyright: true # Copyright of theme and framework
+
+# aside (側邊欄)
+# --------------------------------------
+
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: false # display on mobile
+  position: right # left or right
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description:
+    button:
+      enable: true
+      icon: #fas fa-star
+      text: 💗 Ctrl + D 收藏我的博客 💗
+      link: javascript:AddFavorite('https://ggyy.ga/', 'WayneのBlog') # https://github.com/Waynenet
+  card_announcement:
+    enable: true
+    content: <div>Welcome To WayneのBlog</div>
+  card_recent_post:
+    enable: true
+    limit: 5 # if set 0 will show all
+    sort: date # date or updated
+    sort_order: # Don't modify the setting unless you know how it works
+  card_categories:
+    enable: true
+    limit: 0 # if set 0 will show all
+    expand: none # none/true/false
+    sort_order: # Don't modify the setting unless you know how it works
+  card_tags:
+    enable: true
+    limit: 0 # if set 0 will show all
+    color: true
+    orderby: random # Order of tags, random/name/length
+    order: 1 # Sort of order. 1, asc for ascending; -1, desc for descending
+    sort_order: # Don't modify the setting unless you know how it works
+  card_archives:
+    enable: true
+    type: monthly # yearly or monthly
+    format: YYYY年MM月 #cn: MMMM YYYY # eg: YYYY年MM月
+    order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
+    limit: 8 # if set 0 will show all
+    sort_order: # Don't modify the setting unless you know how it works
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+    sort_order: # Don't modify the setting unless you know how it works
+
+# busuanzi count for PV / UV in site
+# 訪問人數
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
+
+# Time difference between publish date and now (網頁運行時間)
+# Formal: Month/Day/Year Time or Year/Month/Day Time
+runtimeshow:
+  enable: true
+  publish_date: 6/20/2021 00:00:00
+
+# Aside widget - Newest Comments
+newest_comments:
+  enable: false
+  sort_order: # Don't modify the setting unless you know how it works
+  limit: 6
+  storage: 10 # unit: mins, save data to localStorage
+  avatar: true
+
+# Bottom right button (右下角按鈕)
+# --------------------------------------
+
+# Conversion between Traditional and Simplified Chinese (簡繁轉換)
+translate:
+  enable: true
+  # The text of a button
+  default: 繁
+  # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
+  defaultEncoding: 2
+  # Time delay
+  translateDelay: 0
+  # The text of the button when the language is Simplified Chinese
+  msgToTraditionalChinese: '繁'
+  # The text of the button when the language is Traditional Chinese
+  msgToSimplifiedChinese: '簡'
+
+# Read Mode (閲讀模式)
+readmode: true
+
+# dark mode
+darkmode:
+  enable: true
+  # Toggle Button to switch dark/light mode
+  button: true
+  # Switch dark/light mode automatically (自動切換 dark mode和 light mode)
+  # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
+  # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
+  # autoChangeMode: false
+  autoChangeMode: 2
+  # Set the light mode time. The value is between 0 and 24. If not set, the default value is 6 and 18
+  start: # 8
+  end: # 22
+
+# show scroll percent in scroll-to-top button
+rightside_scroll_percent: true
+
+# Don't modify the following settings unless you know how they work (非必要請不要修改 )
+# Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
+# Don't repeat 不要重複
+rightside_item_order:
+  enable: true
+  hide: readmode,translate,hideAside # readmode,translate,darkmode,hideAside
+  show: toc,chat,comment,darkmode # toc,chat,comment
+
+# Math (數學)
+# --------------------------------------
+# About the per_page
+# if you set it to true, it will load mathjax/katex script in each page (true 表示每一頁都加載js)
+# if you set it to false, it will load mathjax/katex script according to your setting (add the 'mathjax: true' in page's front-matter)
+# (false 需要時加載，須在使用的 Markdown Front-matter 加上 mathjax: true)
+
+# MathJax
+mathjax:
+  enable: false
+  per_page: false
+
+# KaTeX
+katex:
+  enable: false
+  per_page: false
+  hide_scrollbar: true
+
+# search (搜索)
+# see https://butterfly.js.org/posts/ceeb73f/#搜索系統
+# --------------------------------------
+
+# Algolia search
+algolia_search:
+  enable: false
+  hits:
+    per_page: 6
+
+# Local search
+local_search:
+  enable: false
+  # Preload the search data when the page loads.
+  preload: false
+  # Show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  # Unescape html strings to the readable one.
+  unescape: false
+  CDN:
+
+# Docsearch
+docsearch:
+  enable: false
+  appId:
+  apiKey:
+  indexName:
+  option:
+
+# Share System (分享)
 # --------------------------------------
 
 # AddThis
@@ -490,12 +615,6 @@ daovoice:
   enable: false
   app_id:
 
-# gitter
-# https://gitter.im/
-gitter:
-  enable: false
-  room:
-
 # crisp
 # https://crisp.chat/en/
 crisp:
@@ -508,15 +627,6 @@ messenger:
   enable: false
   pageID:
   lang: zh_CN # Language en_US/zh_CN/zh_TW and so on
-
-# Footer Settings
-# --------------------------------------
-footer:
-  owner:
-    enable: true
-    since: 2021
-  custom_text: I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p>
-  copyright: true # Copyright of theme and framework
 
 # Analysis
 # --------------------------------------
@@ -614,6 +724,14 @@ rightside-bottom:
 # Enter transitions (開啓網頁進入效果)
 enter_transitions: true
 
+# Typewriter Effect (打字效果)
+# https://github.com/disjukr/activate-power-mode
+activate_power_mode:
+  enable: false
+  colorful: true # open particle animation (冒光特效)
+  shake: true #  open shake (抖動特效)
+  mobile: false
+
 # Background effects (背景特效)
 # --------------------------------------
 
@@ -640,14 +758,6 @@ canvas_nest:
   opacity: 0.7 # the opacity of line (0~1), default: 0.5.
   zIndex: -1 # z-index property of the background, default: -1.
   count: 99 # the number of lines, default: 99.
-  mobile: false
-
-# Typewriter Effect (打字效果)
-# https://github.com/disjukr/activate-power-mode
-activate_power_mode:
-  enable: false
-  colorful: true # open particle animation (冒光特效)
-  shake: true #  open shake (抖動特效)
   mobile: false
 
 # Mouse click effects: fireworks (鼠標點擊效果: 煙火特效)
@@ -714,8 +824,7 @@ subtitle:
     startDelay: 300 # time before typing starts in milliseconds
     typeSpeed: 150 # type speed in milliseconds
     backSpeed: 50 # backspacing speed in milliseconds
-    # loop (循環打字)
-    loop: true
+    loop: true # loop (循環打字)
   # source 調用第三方服務
   # source: false 關閉調用
   # source: 1  調用一言網的一句話（簡體） https://hitokoto.cn/
@@ -738,122 +847,13 @@ preloader:
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
 
-# aside (側邊欄)
-# --------------------------------------
-
-aside:
+# wordcount (字數統計)
+# see https://butterfly.js.org/posts/ceeb73f/#字數統計
+wordcount:
   enable: true
-  hide: false
-  button: true
-  mobile: false # display on mobile
-  position: right # left or right
-  display:
-    archive: true
-    tag: true
-    category: true
-  card_author:
-    enable: true
-    description:
-    button:
-      enable: true
-      icon: #fas fa-star
-      text: 💗 Ctrl + D 收藏我的博客 💗
-      link: javascript:AddFavorite('https://ggyy.ga/', 'WayneのBlog') # https://github.com/Waynenet
-  card_announcement:
-    enable: true
-    content: <div>Welcome To WayneのBlog</div>
-  card_recent_post:
-    enable: true
-    limit: 5 # if set 0 will show all
-    sort: date # date or updated
-    sort_order: # Don't modify the setting unless you know how it works
-  card_categories:
-    enable: true
-    limit: 0 # if set 0 will show all
-    expand: none # none/true/false
-    sort_order: # Don't modify the setting unless you know how it works
-  card_tags:
-    enable: true
-    limit: 0 # if set 0 will show all
-    color: true
-    orderby: random # Order of tags, random/name/length
-    order: 1 # Sort of order. 1, asc for ascending; -1, desc for descending
-    sort_order: # Don't modify the setting unless you know how it works
-  card_archives:
-    enable: true
-    type: monthly # yearly or monthly
-    format: YYYY年MM月 #cn: MMMM YYYY # eg: YYYY年MM月
-    order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
-    limit: 8 # if set 0 will show all
-    sort_order: # Don't modify the setting unless you know how it works
-  card_webinfo:
-    enable: true
-    post_count: true
-    last_push_date: true
-    sort_order: # Don't modify the setting unless you know how it works
-
-# busuanzi count for PV / UV in site
-# 訪問人數
-busuanzi:
-  site_uv: true
-  site_pv: true
-  page_pv: true
-
-# Time difference between publish date and now (網頁運行時間)
-# Formal: Month/Day/Year Time or Year/Month/Day Time
-runtimeshow:
-  enable: true
-  publish_date: 6/20/2021 00:00:00
-
-# Aside widget - Newest Comments
-newest_comments:
-  enable: false
-  sort_order: # Don't modify the setting unless you know how it works
-  limit: 6
-  storage: 10 # unit: mins, save data to localStorage
-  avatar: true
-
-# Bottom right button (右下角按鈕)
-# --------------------------------------
-
-# Conversion between Traditional and Simplified Chinese (簡繁轉換)
-translate:
-  enable: true
-  # The text of a button
-  default: 繁
-  # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
-  defaultEncoding: 2
-  # Time delay
-  translateDelay: 0
-  # The text of the button when the language is Simplified Chinese
-  msgToTraditionalChinese: '繁'
-  # The text of the button when the language is Traditional Chinese
-  msgToSimplifiedChinese: '簡'
-
-# Read Mode (閲讀模式)
-readmode: true
-
-# dark mode
-darkmode:
-  enable: true
-  # Toggle Button to switch dark/light mode
-  button: true
-  # Switch dark/light mode automatically (自動切換 dark mode和 light mode)
-  # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
-  # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
-  # autoChangeMode: false
-  autoChangeMode: 2
-
-# show scroll percent in scroll-to-top button
-rightside_scroll_percent: true
-
-# Don't modify the following settings unless you know how they work (非必要請不要修改 )
-# Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
-# Don't repeat 不要重複
-rightside_item_order:
-  enable: true
-  hide: readmode,translate,hideAside # readmode,translate,darkmode,hideAside
-  show: toc,chat,comment,darkmode # toc,chat,comment
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
 
 # Lightbox (圖片大圖查看模式)
 # --------------------------------------
@@ -864,11 +864,17 @@ rightside_item_order:
 medium_zoom: false
 
 # fancybox
-# http://fancyapps.com/fancybox/3/
+# https://fancyapps.com/fancybox/
 fancybox: true
 
 # Tag Plugins settings (標籤外掛)
 # --------------------------------------
+
+# abcjs (樂譜渲染)
+# See https://github.com/paulrosen/abcjs
+abcjs:
+  enable: false
+  per_page: true
 
 # mermaid
 # see https://github.com/mermaid-js/mermaid
@@ -991,7 +997,7 @@ CDN:
   # when set it to local, you need to install hexo-butterfly-extjs
   third_party_provider: jsdelivr
 
-  # Add version number to CDN, true or false
+  # Add version number to url, true or false
   version: false
 
   # Custom format
@@ -1005,8 +1011,8 @@ CDN:
     # translate:
     # local_search:
     # algolia_js:
-    # algolia_search_v4:
-    # instantsearch_v4:
+    # algolia_search:
+    # instantsearch:
     # docsearch_js:
     # docsearch_css:
     # pjax:
@@ -1019,6 +1025,7 @@ CDN:
     # twikoo:
     # waline_js:
     # waline_css:
+    # giscus:
     # sharejs:
     # sharejs_css:
     # mathjax:
@@ -1032,8 +1039,8 @@ CDN:
     # instantpage:
     # typed:
     # pangu:
-    # fancybox_css_v4:
-    # fancybox_v4:
+    # fancybox_css:
+    # fancybox:
     # medium_zoom:
     # snackbar_css:
     # snackbar:
@@ -1041,7 +1048,7 @@ CDN:
     # fireworks:
     # click_heart:
     # ClickShowText:
-    # fontawesomeV6:
+    # fontawesome:
     # flickr_justified_gallery_js:
     # flickr_justified_gallery_css:
     # aplayer_css:
@@ -1053,6 +1060,7 @@ CDN:
     # artalk_js:
     # artalk_css:
     # busuanzi:
+    # abcjs_basic_js:
 
 # envelope_comment
 # see https://akilar.top/posts/e2d3c450/

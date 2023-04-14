@@ -1,7 +1,7 @@
 ---
 title: typecho开启伪静态教程步骤
 cover: >-
-  https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/weijingtai.png
+  https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/weijingtai.png
 tags:
   - Typecho
 categories:
@@ -143,7 +143,7 @@ apache 配置:
 
 如图，在typecho后台，开启伪静态，并选择你喜好的url形式：
 
- ![伪静态](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/weijingtai.png) 
+ ![伪静态](https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/weijingtai.png) 
 
 具体操作，根据本人实际操作如下
 

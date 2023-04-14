@@ -6,15 +6,15 @@ tags:
 categories:
   - 日新月异
   - 软件分享
-cover: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/office1.png
+cover: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/office1.png
 abbrlink: f9828f56
 date: 2021-09-22 20:17:12
 updated: 2022-08-11 00:26:13
 ---
 Office Tool Plus（简称OTP）是由 Yerong 和蓝点网开发的一个强大且实用的 Office 部署工具。它可以快速自定义部署，在线下载安装 Office 产品的各个版本，也可以通过已有的离线安装文件来部署Office镜像，同时在安装过程中你可以自由选择安装哪些需要使用的组件， 在安装之后也可以单独来安装某个需要的组件。
 
- ![Office Tool Plus](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/office1.png) 
-  ![Office Tool Plus](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/office2.png) 
+ ![Office Tool Plus](https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/office1.png) 
+  ![Office Tool Plus](https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/office2.png) 
 ## 工具介绍
 
 Office Tool Plus 是目前颇为优秀的 Office 部署工具，工具基于 Office 部署工具制作，内置迅雷、OSPP 等多个工具，方便用户下载、安装、激活、管理 Office。无论是新手还是老用户都可以很方便地使用 Office Tool Plus 部署 Office，可以使用预设好的配置一键安装 Office，也可以完全自定义安装 Office。针对企业，还支持批量部署，可以下发制作好的 ISO 给员工一键部署，也可以使用静默参数进行安装。

@@ -1,7 +1,7 @@
 ---
 title: Clash for Windows
 cover: >-
-  https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/clash.png
+  https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/clash.png
 tags:
   - 软件
   - Windows
@@ -15,7 +15,7 @@ updated: 2022-12-10 22:38:13
 ---
 Clash，支持Windows、Android、MacOS、Linux等所有平台的免费开源网络代理工具，采用go语言开发，支持多种协议，包括SSR/v2ray/Trojan/Surge等协议，通过订阅机场提供的协议配置，从而获取大量服务器节点实现负载均衡，采用Clash API端口来配置和控制Clash核心程序，便于用户可视化操作和使用。
 
- ![clash](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/clash.png) 
+ ![clash](https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/clash.png) 
 
 ## 新版变化
 

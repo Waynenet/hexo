@@ -6,7 +6,7 @@ tags:
 categories: 
     - 日新月异
     - 建站技巧
-cover: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/%E5%A4%B4%E5%83%8F%E4%B8%8A%E4%BC%A0.png
+cover: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/%E5%A4%B4%E5%83%8F%E4%B8%8A%E4%BC%A0.png
 abbrlink: '58020825'
 date: 2021-06-29 23:57:13
 updated: 2022-06-24 20:26:13
@@ -18,7 +18,7 @@ updated: 2022-06-24 20:26:13
 　　avatarUpload是typecho第一款头像上传插件，它完美整合了typecho的上传头像与gravatar头像共存，兼容typecho默认主题，以及使用typecho调用头像语法的主题。{% link 作者原文, https://gaobukai.com/phpsoft/311.html %}
 
 
- ![头像上传](https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/%E5%A4%B4%E5%83%8F%E4%B8%8A%E4%BC%A0.png) 
+ ![头像上传](https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/%E5%A4%B4%E5%83%8F%E4%B8%8A%E4%BC%A0.png) 
 
 
 ## <div style="color:#ff6c6c;">使用方法及文件下载</div>
