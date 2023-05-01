@@ -2,7 +2,7 @@
 title: 关于
 date: 2022-06-23 23:42:49
 aside: false
-top_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/sea-7252122_1920.jpg
+top_img: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/sea-7252122_1920.jpg
 ---
 
 ![Welcome](https://api.vvhan.com/api/ip)
@@ -11,10 +11,10 @@ top_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/sea-7252122_192
 
 ```PLAINTEXT
 Name：Wayne
-Blog：https://ggyy.ga/
-Homepage：https://soga.ml/
-Navigation：https://3301.ml/
-Github： https://github.com/Waynenet
+Blog：https://blog.kong.pub/
+Homepage：https://kong.pub/
+Navigation：https://nav.kong.pub/
+Github：https://github.com/Waynenet/
 Hobbies：个人主义者，单身青年，闲散人士，编程小白，游戏菜鸟，影视迷，音乐狂，诗人，怪客。
 ```
 
@@ -87,7 +87,7 @@ Hobbies：个人主义者，单身青年，闲散人士，编程小白，游戏�
 
 ### <font color="Pink">关于</font>
 
-- 我们的网站名称是WayneのBlog，以下域名为WayneのBlog正在使用的域名：ggyy.ga，当您访问这些域名时均表明您已接受本隐私政策。
+- 我们的网站名称是WayneのBlog，以下域名为WayneのBlog正在使用的域名：blog.kong.pub，当您访问这些域名时均表明您已接受本隐私政策。
 
 ### <font color="Pink">评论</font>
 

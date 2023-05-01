@@ -13,7 +13,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://ggyy.ga
+url: https://blog.kong.pub
 root: /
 
 permalink: article/:abbrlink.html # post为自定义前缀
@@ -94,7 +94,7 @@ douban:
     quote: 'One who is filled with knowledge always behaves with elegance.'
     meta: true
     comments: true
-    top_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/2.jpg
+    top_img: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/2.jpg
     aside: true
     path: books
     limit:
@@ -103,7 +103,7 @@ douban:
     quote: 'Life is like a drama, drama is like life.'
     meta: true
     comments: true
-    top_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/wallhaven-0w2de6.jpg
+    top_img: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/wallhaven-0w2de6.jpg
     aside: true
     path: movies
     limit:
@@ -123,7 +123,7 @@ douban:
 # Author: Ice Kano
 # Modify: Lete乐特
 githubcalendar:
-  enable: false
+  enable: true
   enable_page: /
   user: Waynenet
   layout:
@@ -141,9 +141,9 @@ githubcalendar:
   # color: "['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f']" #浅紫色调
   # color: "['#ebedf0', '#f0fff4', '#dcffe4', '#bef5cb', '#85e89d', '#34d058', '#28a745', '#22863a', '#176f2c', '#165c26', '#144620']" #翠绿色调
   # color: "['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c']" #天青色调
-  api: https://python-github-calendar-api.vercel.app/api
+  api: https://apigithubcalendar.kong.pub/api
   # api: https://python-gitee-calendar-api.vercel.app/api
-  calendar_js: https://cdn.jsdelivr.net/npm/wayne-img@latest/js/hexo_githubcalendar.js
+  calendar_js: https://gcore.jsdelivr.net/npm/wayne-img@latest/js/hexo_githubcalendar.js
   plus_style: ""
 
 
@@ -157,7 +157,7 @@ feed:
   content_limit: 100
   content_limit_delim: ' '
   order_by: -date
-  icon: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/logo.png
+  icon: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/logo.png
   autodiscovery: true
   template:
 

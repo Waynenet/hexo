@@ -22,13 +22,13 @@ menu:
   #友链: /link/ || fas fa-link
   关于: /about/ || fas fa-heart
   其它||fas fa-list-ul||hide:
-    WayneのHome: https://soga.ml/ || fas fa-house
-    WayneのNavigation: https://3301.ml/ || fas fa-globe
-    WayneのStart: https://start.dang.gq || fas fa-compass
-    WayneのMusic: https://music.dang.gq || fas fa-music
-    WayneのDrive: https://drive.soga.ml || fas fa-cloud
-    WayneのLab: https://lab.dang.gq || fas fa-flask
-    WayneのHouse: https://loving.tk/ || fas fa-heart-pulse
+    WayneのHome: https://kong.pub/ || fas fa-house
+    WayneのNavigation: https://nav.kong.pub/ || fas fa-globe
+    WayneのStart: https://start.kong.pub/ || fas fa-compass
+    WayneのMusic: https://music.kong.pub/ || fas fa-music
+    WayneのDrive: https://drive.kong.pub/ || fas fa-cloud
+    WayneのLab: https://lab.kong.pub/ || fas fa-flask
+    # WayneのHouse: https://love.kong.pub/ || fas fa-heart-pulse
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -48,34 +48,34 @@ social:
    fas fa-envelope: mailto:wuw@gmx.com || Email || '#4a7dbe'
    fab fa-telegram: https://t.me/Wayne_Wu || Telegram || '#3895EE'
    fab fa-twitter: https://twitter.com/Wayne3301 || Twitter || '#0F22F4'
-   fas fa-rss: https://ggyy.ga/atom.xml || RSS || '#1C8406'
+   fas fa-rss: https://blog.kong.pub/atom.xml || RSS || '#1C8406'
 
 # Image (圖片設置)
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/logo.png
+favicon: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/logo.png
 
 # Avatar (頭像)
 avatar:
-  img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/logo.png
+  img: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/logo.png
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/astronaut-7272286_1920.jpg
+index_img: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/astronaut-7272286_1920.jpg
 
 # If the banner of page not setting, it will show the top_img
 default_top_img:
 
 # The banner image of archive page
-archive_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/wallhaven-e7ek7k.jpg
+archive_img: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/wallhaven-e7ek7k.jpg
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/space-g9b0bacdf3_1920.jpg
+tag_img: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/space-g9b0bacdf3_1920.jpg
 
 # The banner image of tag page
 # format:
@@ -84,7 +84,7 @@ tag_per_img:
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/ink-gaf20d4ee0_1920.jpg
+category_img: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/ink-gaf20d4ee0_1920.jpg
 
 # The banner image of category page
 # format:
@@ -293,7 +293,7 @@ aside:
       enable: true
       icon: #fas fa-star
       text: 💗 Ctrl + D 收藏我的博客 💗
-      link: javascript:AddFavorite('https://ggyy.ga/', 'WayneのBlog') # https://github.com/Waynenet
+      link: javascript:AddFavorite('https://blog.kong.pub/', 'WayneのBlog') # https://github.com/Waynenet
   card_announcement:
     enable: true
     content: <div>Welcome To WayneのBlog</div>
@@ -556,7 +556,7 @@ facebook_comments:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId: https://twikoo-wayne3301.vercel.app/
+  envId: https://twikoo.kong.pub/
   region:
   visitor: false
   option:
@@ -798,7 +798,7 @@ beautify:
 font:
   global-font-size:
   code-font-size:
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "STZhongsong", "Lantinghei SC", sans-serif
+  font-family:
   code-font-family:
 
 # Font settings for the site title and site subtitle
@@ -1067,10 +1067,10 @@ CDN:
 envelope_comment:
   enable: true #控制开关
   custom_pic:      
-    cover: https://cdn.jsdelivr.net/npm/hexo-butterfly-envelope/lib/violet.jpg #信笺头部图片
-    line: https://cdn.jsdelivr.net/npm/hexo-butterfly-envelope/lib/line.png #信笺底部图片
-    beforeimg: https://cdn.jsdelivr.net/npm/hexo-butterfly-envelope/lib/before.png # 信封前半部分
-    afterimg: https://cdn.jsdelivr.net/npm/hexo-butterfly-envelope/lib/after.png # 信封后半部分
+    cover: https://gcore.jsdelivr.net/npm/hexo-butterfly-envelope/lib/violet.jpg #信笺头部图片
+    line: https://gcore.jsdelivr.net/npm/hexo-butterfly-envelope/lib/line.png #信笺底部图片
+    beforeimg: https://gcore.jsdelivr.net/npm/hexo-butterfly-envelope/lib/before.png # 信封前半部分
+    afterimg: https://gcore.jsdelivr.net/npm/hexo-butterfly-envelope/lib/after.png # 信封后半部分
   message: #信笺正文，多行文本，写法如下
     - 有什么想问的？
     - 有什么想说的？
@@ -1082,7 +1082,7 @@ envelope_comment:
   front_matter: #【可选】comments页面的 front_matter 配置
     title: 留言板
     comments: true
-    top_img: https://cdn.jsdelivr.net/npm/wayne-img@latest/blog/imgs/wallhaven-8oy372.jpg
+    top_img: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/wallhaven-8oy372.jpg
     aside: false
 
 # tag-plugins-plus
@@ -1094,9 +1094,9 @@ tag_plugins:
   link:
     placeholder: /img/link.png #link_card标签默认的图标图片
   CDN:
-    anima: #https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
-    jquery: #https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js #issues标签依赖
-    issues: #https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
+    anima: #https://gcore.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
+    jquery: #https://gcore.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js #issues标签依赖
+    issues: #https://gcore.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
     iconfont: false #//at.alicdn.com/t/font_2032782_8d5kxvn09md.js #参看https://akilar.top/posts/d2ebecef/
-    carousel: false #https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
-    tag_plugins_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@1.0.17/lib/tag_plugins.css
+    carousel: false #https://gcore.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
+    tag_plugins_css: https://gcore.jsdelivr.net/npm/hexo-butterfly-tag-plugins-plus@1.0.17/lib/tag_plugins.css
