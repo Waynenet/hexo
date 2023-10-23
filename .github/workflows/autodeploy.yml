@@ -14,14 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 检查分支
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         ref: master
 
     - name: 安装 Node
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: "16.x"
+        node-version: "18.x" #action使用的node版本，建议大版本和本地保持一致。可以在本地用node -v查询版本号。
 
     - name: 安装 Hexo
       run: |
@@ -38,15 +38,7 @@ jobs:
     - name: 安装依赖
       if: steps.cache.outputs.cache-hit != 'true'
       run: |
-        npm install hexo-butterfly-douban
-        npm install --global gulp-cli
-        npm install gulp --save
-        npm install gulp-htmlclean --save-dev
-        npm install gulp-html-minifier-terser --save-dev
-        npm install gulp-clean-css --save-dev
-        npm install gulp-terser --save-dev
-        npm install gulp-fontmin --save-dev
-        npm install workbox-build --save
+        npm install --save
 
     - name: 生成静态文件
       run: |
