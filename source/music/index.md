@@ -7,19 +7,19 @@ aplayer: true
 ---
 {% tip sync %}《意犹未尽》{% endtip %}
 
-{% meting "7476871946" "tencent" "playlist" "autoplay" "volume:0.4" "theme:#00F7FF" %}
+{% meting "2706593614" "netease" "playlist" "autoplay" "volume:0.4" "theme:#00F7FF" %}
 
 {% tip sync %}《语无伦次》{% endtip %}
 
-{% meting "7476869961" "tencent" "playlist" "volume:0.4" "theme:#00F7FF" "listfolded" %}
+{% meting "2739565112" "netease" "playlist" "volume:0.4" "theme:#00F7FF" "listfolded" %}
 
 {% tip sync %}《百听不厌》{% endtip %}
 
-{% meting "7476871123" "tencent" "playlist" "volume:0.4" "theme:#00F7FF" "listfolded" %}
+{% meting "2567020776" "netease" "playlist" "volume:0.4" "theme:#00F7FF" "listfolded" %}
 
 {% tip sync %}《无语凝噎》{% endtip %}
 
-{% meting "7476873244" "tencent" "playlist" "volume:0.4" "theme:#00F7FF" "listfolded" %}
+{% meting "2706654902" "netease" "playlist" "volume:0.4" "theme:#00F7FF" "listfolded" %}
 
 {% tip sync %}《雷鬼》{% endtip %}
 
