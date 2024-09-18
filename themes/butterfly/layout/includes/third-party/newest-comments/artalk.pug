@@ -1,6 +1,6 @@
 - const { server, site, option } = theme.artalk
-- const avatarCdn = option !== null && option.gravatar && option.gravatar.mirror
-- const avatarDefault = option !== null && option.gravatar && (option.gravatar.params || option.gravatar.default)
+- const avatarCdn = (option !== null && option.gravatar && option.gravatar.mirror) || ''
+- const avatarDefault = (option !== null && option.gravatar && (option.gravatar.params || option.gravatar.default)) || ''
 
 script.
   window.addEventListener('load', () => {
@@ -25,7 +25,7 @@ script.
         for (let i = 0; i < array.length; i++) {
           result += '<div class=\'aside-list-item\'>'
 
-          if (!{theme.newest_comments.avatar}) {
+          if (!{theme.aside.card_newest_comments.avatar}) {
             const name = '!{theme.lazyload.enable ? "data-lazy-src" : "src"}'
             result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
           }
@@ -47,7 +47,7 @@ script.
 
     const getSetting = async () => {
       try {
-        const res = await fetch('!{server}/api/conf', { method: 'GET' })
+        const res = await fetch('!{server}/api/v2/conf', { method: 'GET' })
         return await res.json()
       } catch (e) {
         console.log(e)
@@ -55,26 +55,22 @@ script.
     }
 
     const headerList = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Origin': window.location.origin
-      },
-      body: new URLSearchParams({
-        'site_name': '!{site}',
-        'limit': '!{theme.newest_comments.limit}',
-        'type':'latest_comments'
-      })
+      method: 'GET',
     }
+
+    const searchParams = new URLSearchParams({
+      'site_name': '!{site}',
+      'limit': '!{theme.aside.card_newest_comments.limit}',
+    })
 
     const getComment = async () => {
       try {
-        const res = await fetch('!{server}/api/stat', headerList)
+        const res = await fetch(`!{server}/api/v2/stats/latest_comments?${searchParams}`, headerList)
         const result = await res.json()
         const avatarStr = await getSetting()
-        const { mirror, params, default:defaults } = avatarStr.data.frontend_conf.gravatar
-        const avatarCdn = !{avatarCdn} || mirror
-        let avatarDefault = !{avatarDefault} || params || defaults
+        const { mirror, params, default:defaults } = avatarStr.frontend_conf.gravatar
+        const avatarCdn = '!{avatarCdn}' || mirror
+        let avatarDefault = '!{avatarDefault}' || params || defaults
         avatarDefault = avatarDefault.startsWith('d=') ? avatarDefault : `d=${avatarDefault}`
         const artalk = result.data.map(function (e) {
           return {
@@ -85,7 +81,7 @@ script.
             'date': e.date,
           }
         })
-        saveToLocal.set('artalk-newest-comments', JSON.stringify(artalk), !{theme.newest_comments.storage}/(60*24))
+        btf.saveToLocal.set('artalk-newest-comments', JSON.stringify(artalk), !{theme.aside.card_newest_comments.storage}/(60*24))
         generateHtml(artalk)
       } catch (e) {
         console.log(e)
@@ -96,7 +92,7 @@ script.
 
     const newestCommentInit = () => {
       if (document.querySelector('#card-newest-comments .aside-list')) {
-        const data = saveToLocal.get('artalk-newest-comments')
+        const data = btf.saveToLocal.get('artalk-newest-comments')
         if (data) {
           generateHtml(JSON.parse(data))
         } else {
@@ -106,5 +102,6 @@ script.
     }
 
     newestCommentInit()
-    document.addEventListener('pjax:complete', newestCommentInit)
+    btf.addGlobalFn('pjaxComplete', newestCommentInit, 'artalk_newestComment')
+
   })
