@@ -11,7 +11,7 @@ if theme.menu
         .author-info__description!= theme.aside.card_author.description || config.description
       .site-data.is-center
         a(href=url_for(config.archive_dir) + '/')
-          .headline= _p('aside.articles') 
+          .headline= _p('aside.articles')
           .length-num= site.posts.length
         a(href=url_for(config.tag_dir) + '/' )
           .headline= _p('aside.tags')
