@@ -22,14 +22,14 @@ if theme.menu
 
       //- begin follow_me按钮
       if theme.aside.card_author.button.enable
-        .is-center#card-info-btn.button--animated(href=theme.aside.card_author.button.link)
+        .text-center#card-info-btn.button--animated(href=theme.aside.card_author.button.link)
           i(class=theme.aside.card_author.button.icon)
           span=theme.aside.card_author.button.text
       //- end     
       //- begin 社交
-      //-if(theme.social)
-      //-  .menu-info-social-icons.is-center
-      //-    !=fragment_cache('social', function(){return partial('includes/header/social')})
+      if(theme.social)
+        .menu-info-social-icons.text-center
+          !=fragment_cache('social', function(){return partial('includes/header/social')})
       //- end
 
       !=partial('includes/header/menu_item', {}, {cache: true})
