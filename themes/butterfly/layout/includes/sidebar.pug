@@ -22,13 +22,13 @@ if theme.menu
 
       //- begin follow_me按钮
       if theme.aside.card_author.button.enable
-        .text-center#card-info-btn.button--animated(href=theme.aside.card_author.button.link)
+        .text-center#card-info-btn(href=theme.aside.card_author.button.link)
           i(class=theme.aside.card_author.button.icon)
           span=theme.aside.card_author.button.text
       //- end     
       //- begin 社交
       if theme.social
-        #site_social_icons
+        .card-info-social-icons.text-center
           !=partial('includes/header/social', {}, {cache: true})
       //- end
 
