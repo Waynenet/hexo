@@ -691,7 +691,7 @@ facebook_comments:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId: https://twikoo.kong.pub/
+  envId: https://waynetwikoo.netlify.app/.netlify/functions/twikoo
   region:
   # Use Twikoo visitor count as the page view count
   visitor: false
