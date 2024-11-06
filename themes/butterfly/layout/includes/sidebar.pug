@@ -21,15 +21,15 @@ if theme.menu
           .length-num= site.categories.length
 
       //- begin follow_me按钮
-      if theme.aside.card_author.button.enable
-        .text-center#card-info-btn(href=theme.aside.card_author.button.link)
-          i(class=theme.aside.card_author.button.icon)
-          span=theme.aside.card_author.button.text
+      //- if theme.aside.card_author.button.enable
+      //-   .text-center#card-info-btn(href=theme.aside.card_author.button.link)
+      //-     i(class=theme.aside.card_author.button.icon)
+      //-     span=theme.aside.card_author.button.text
       //- end     
       //- begin 社交
-      if theme.social
-        .card-info-social-icons.text-center
-          !=partial('includes/header/social', {}, {cache: true})
+      //- if theme.social
+      //-   .card-info-social-icons.text-center
+      //-     !=partial('includes/header/social', {}, {cache: true})
       //- end
 
       !=partial('includes/header/menu_item', {}, {cache: true})

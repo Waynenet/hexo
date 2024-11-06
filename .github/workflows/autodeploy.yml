@@ -53,7 +53,7 @@ jobs:
         cd ./public
         git init
         git config --global user.name 'Wayne'
-        git config --global user.email 'waynenet8@gmail.com'
+        git config --global user.email 'way8941@gmail.com'
         git add .
         git commit -m "${{ github.event.head_commit.message }} $(date +"%Z %Y-%m-%d %A %H:%M:%S") Updated By Github Actions"
         git push --force --quiet "https://Waynenet:${{ secrets.GITHUBTOKEN }}@github.com/Waynenet/Waynenet.github.io.git" master:main
