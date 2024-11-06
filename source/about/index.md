@@ -15,7 +15,7 @@ Blog：https://blog.kong.pub/
 Homepage：https://kong.pub/
 Navigation：https://nav.kong.pub/
 Github：https://github.com/Waynenet/
-Hobbies：个人主义者，单身青年，闲散人士，编程小白，游戏菜鸟，影视迷，音乐狂，诗人，怪客。
+Hobbies：个人主义者，闲散人士，编程小白，游戏菜鸟，影视迷，音乐狂，诗人，怪客。
 ```
 
 ***
@@ -23,27 +23,27 @@ Hobbies：个人主义者，单身青年，闲散人士，编程小白，游戏�
 ##  <font color="Pink">联系方式</font>
 
 {% btns circle grid5 %}
-<a href='https://t.me/Wayne_Wu'>
+<a href='https://t.me/Wayne3301'>
   <i class='fab fa-telegram'></i>
   <b>Telegram</b>
-  {% p green, @Wayne_Wu %}
+  {% p green, @Wayne3301 %}
 </a>
 <a href='https://t.me/wayne_3301'>
   <i class='fab fa-telegram'></i>
   <b>Telegram channel</b>
   {% p green, 4回元の空间の袋 %}
 </a>
-<a href='tel:+13208030081'>
+<a href='tel:+19093450501'>
   <i class='fas fa-phone'></i>
   <b>Google Voice</b>
-  {% p green, +1 320-803-0080 %}
+  {% p green, +1 909-345-0501 %}
 </a>
 <a href='mailto:wuw@gmx.com'>
   <i class='fas fa-envelope'></i>
   <b>Email</b>
   {% p green, wuw@gmx.com %}
 </a>
-<a href='https://twitter.com/Wayne3301'>
+<a href='https://x.com/Wayne3301'>
   <i class='fab fa-twitter'></i>
   <b>Twitter</b>
   {% p green, @Wayne3301 %}
