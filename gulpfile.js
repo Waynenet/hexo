@@ -4,7 +4,7 @@ const htmlMin = require('gulp-html-minifier-terser')
 const htmlClean = require('gulp-htmlclean')
 const terser = require('gulp-terser')
 const cleanCSS = require('gulp-clean-css')
-var fontmin = require('gulp-fontmin')
+const fontmin = require('gulp-fontmin')
 const workbox = require("workbox-build");
 
 // 压缩js
