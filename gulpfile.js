@@ -11,8 +11,11 @@ const workbox = require("workbox-build");
 gulp.task('minify-js', () =>
     gulp.src(['./public/**/*.js', '!./public/**/*.min.js'])
         .pipe(terser({}))
+        .on('error', (err) => {
+            console.error('JS Minify Error:', err.message);
+        })
         .pipe(gulp.dest('./public'))
-)
+);
 
 //压缩css
 gulp.task('minify-css', () => {
@@ -20,6 +23,9 @@ gulp.task('minify-css', () => {
         .pipe(cleanCSS({
             compatibility: 'ie11'
         }))
+        .on('error', (err) => {
+            console.error('CSS Minify Error:', err.message);
+        })
         .pipe(gulp.dest('./public'));
 });
 
@@ -46,35 +52,41 @@ gulp.task('minify-html', () =>
             minifyCSS: true, //压缩页面 CSS
             minifyURLs: true  //压缩页面URL
         }))
+        .on('error', (err) => {
+            console.error('HTML Minify Error:', err.message);
+        })
         .pipe(gulp.dest('./public'))
 )
 
 //压缩字体
 function minifyFont(text, cb) {
-    gulp
-        .src('./public/font/*.ttf') //原字体所在目录
-        .pipe(fontmin({
-            text: text
-        }))
+    gulp.src('./public/font/*.ttf') //原字体所在目录
+        .pipe(fontmin({ text }))
+        .on('error', (err) => {
+            console.error('Font Minify Error:', err.message);
+            cb(err);
+        })
         .pipe(gulp.dest('./public/fontdest/')) //压缩后的输出目录
         .on('end', cb);
 }
 
 gulp.task('minify-ttf', (cb) => {
-    var buffers = [];
-    gulp
-        .src(['./public/**/*.html']) //HTML文件所在目录请根据自身情况修改
-        .on('data', function (file) {
+    let buffers = [];
+    gulp.src(['./public/**/*.html']) // HTML文件所在目录
+        .on('data', (file) => {
             buffers.push(file.contents);
         })
-        .on('end', function () {
-            var text = Buffer.concat(buffers).toString('utf-8');
+        .on('end', () => {
+            const text = Buffer.concat(buffers).toString('utf-8');
             minifyFont(text, cb);
+        })
+        .on('error', (err) => {
+            console.error('HTML Read Error:', err.message);
+            cb(err);
         });
 });
 
 //压缩
-//gulp.task("zip", gulp.parallel('minify-js', 'minify-css', 'minify-html', 'minify-ttf'))
 gulp.task("default", gulp.parallel('minify-js', 'minify-css', 'minify-html', 'minify-ttf'))
 
 
