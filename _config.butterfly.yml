@@ -357,7 +357,7 @@ aside:
       enable: true
       icon: #fas fa-star
       text: 💗 Ctrl + D 收藏我的博客 💗
-      link: javascript:AddFavorite('https://blog.kong.pub/', 'WayneのBlog') # https://github.com/Waynenet
+      link: javascript:AddFavorite('https://Waynenet.github.io/', 'WayneのBlog') # https://github.com/Waynenet
   card_announcement:
     enable: true
     content: <div>Welcome To WayneのBlog</div>

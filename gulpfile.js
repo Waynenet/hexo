@@ -4,7 +4,7 @@ const htmlMin = require('gulp-html-minifier-terser')
 const htmlClean = require('gulp-htmlclean')
 const terser = require('gulp-terser')
 const cleanCSS = require('gulp-clean-css')
-const fontmin = require('gulp-fontmin')
+const fontSpider = require('gulp-font-spider')
 const workbox = require("workbox-build");
 
 // 压缩js
@@ -61,7 +61,7 @@ gulp.task('minify-html', () =>
 //压缩字体
 function minifyFont(text, cb) {
     gulp.src('./public/font/*.ttf') //原字体所在目录
-        .pipe(fontmin({ text }))
+        .pipe(fontSpider({ text }))
         .on('error', (err) => {
             console.error('Font Minify Error:', err.message);
             cb(err);
