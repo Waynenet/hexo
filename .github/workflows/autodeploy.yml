@@ -54,23 +54,26 @@ jobs:
     - name: 部署到 GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
-        # 部署所需的 Personal Access Token (PAT)，请确保你已经在仓库的 Secrets 中设置了名为 HEXO 的 PAT
+        # 部署所需的 Personal Access Token (PAT)
         personal_token: ${{ secrets.HEXO }}
 
-        # 部署的目标仓库，格式为 "用户名/仓库名"
+        # 部署的目标仓库
         external_repository: Waynenet/Waynenet.github.io
 
         # 部署的目标分支
         publish_branch: main
 
-        # 需要部署的文件夹，Hexo 生成的静态文件默认在 public 目录下
+        # 需要部署的文件夹
         publish_dir: ./public
+
+        # 设置为 true，保留目标仓库中已存在但本次部署未覆盖的文件
+        keep_files: true
 
         # 提交部署的用户信息
         user_name: 'Waynenet'
         user_email: '54445994+Waynenet@users.noreply.github.com'
 
-        # 自定义提交信息，这里使用触发本次部署的 commit 信息
+        # 自定义提交信息
         commit_message: ${{ github.event.head_commit.message }}
 
     - name: 检查提交信息并提取版本号
