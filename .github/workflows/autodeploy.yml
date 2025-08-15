@@ -1,10 +1,11 @@
 name: 自动部署
+
 # 当有改动推送到master分支时，启动Action
 on:
   push:
     branches:
       - master
-      #2020年10月后github新建仓库默认分支改为main，注意更改
+      # 2020年10月后github新建仓库默认分支改为main，注意更改
   release:
     types:
       - published
@@ -21,22 +22,24 @@ jobs:
     - name: 安装 Node
       uses: actions/setup-node@v4
       with:
-        node-version: "22.x" #action使用的node版本，建议大版本和本地保持一致。可以在本地用node -v查询版本号。
+        node-version: "22.x" # action使用的node版本，建议大版本和本地保持一致。可以在本地用node -v查询版本号。
 
     - name: 安装 Hexo
       run: |
         export TZ='Asia/Shanghai'
         npm install hexo-cli -g
 
-    - name: 缓存 Hexo
+    - name: 缓存 Hexo 依赖
+      id: cache-dependencies
       uses: actions/cache@v4
-      id: cache
       with:
         path: node_modules
-        key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
 
     - name: 安装依赖
-      if: steps.cache.outputs.cache-hit != 'true'
+      if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: |
         npm install --save
 
@@ -48,31 +51,24 @@ jobs:
         gulp
         gulp pwa
 
-    - name: 部署
-      run: |
-        git clone https://github.com/Waynenet/Waynenet.github.io.git deploy-repo
-        cd deploy-repo
-        git checkout main
+    - name: 部署到 GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        # 部署所需的 Personal Access Token (PAT)，请确保你已经在仓库的 Secrets 中设置了名为 HEXO 的 PAT
+        personal_token: ${{ secrets.HEXO }}
 
-        # 清空仓库，但保留以下关键文件和目录：
-        find . -path ./.git -prune -o \
-               -path ./.github -prune -o \
-               -name 'README.md' -prune -o \
-               -exec rm -rf {} \; 2> /dev/null
+        # 部署的目标仓库，格式为 "用户名/仓库名"
+        external_repository: Waynenet/Waynenet.github.io
 
-        # 复制 public 内容（-n 避免覆盖已保留的文件）
-        cp -rn ../public/* .
+        # 部署的目标分支
+        publish_branch: main
 
-        git config user.name 'Waynenet'
-        git config user.email '54445994+Waynenet@users.noreply.github.com'
+        # 需要部署的文件夹，Hexo 生成的静态文件默认在 public 目录下
+        publish_dir: ./public
 
-        git pull --rebase origin main || echo "首次部署，跳过pull"
+        # 提交部署的用户信息
+        user_name: 'Waynenet'
+        user_email: '54445994+Waynenet@users.noreply.github.com'
 
-        git add -A
-
-        if git diff-index --quiet HEAD --; then
-          echo "没有变更，无需提交"
-        else
-          git commit -m "${{ github.event.head_commit.message }} $(date +"%Z %Y-%m-%d %A %H:%M:%S") 增量更新 By Github Actions"
-          git push "https://Waynenet:${{ secrets.HEXO }}@github.com/Waynenet/Waynenet.github.io.git" main
-        fi
+        # 自定义提交信息，这里使用触发本次部署的 commit 信息
+        commit_message: ${{ github.event.head_commit.message }}
