@@ -72,3 +72,33 @@ jobs:
 
         # 自定义提交信息，这里使用触发本次部署的 commit 信息
         commit_message: ${{ github.event.head_commit.message }}
+
+    - name: 检查提交信息并提取版本号
+      # 从最新的 commit message 中用正则表达式提取版本号
+      # 例如 "release v1.2.3" 或 "Release v1.2.3"
+      # 并将提取到的版本号设置到一个输出变量 `tag_name` 中
+      id: extract_tag
+      run: |
+        COMMIT_MSG="${{ github.event.head_commit.message }}"
+        if [[ $COMMIT_MSG =~ [Rr]elease[[:space:]]+(v[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?) ]]; then
+          echo "发现版本号: ${BASH_REMATCH[1]}"
+          echo "tag_name=${BASH_REMATCH[1]}" >> $GITHUB_OUTPUT
+        else
+          echo "提交信息中未发现'release vX.Y.Z'格式的版本号"
+          echo "tag_name=" >> $GITHUB_OUTPUT
+        fi
+
+    - name: 发送 Release Tag 通知
+      # 仅当上一步成功提取到 tag_name 时才运行此步骤
+      if: steps.extract_tag.outputs.tag_name != ''
+      uses: peter-evans/repository-dispatch@v3
+      with:
+        token: ${{ secrets.HEXO }}
+        repository: Waynenet/Waynenet.github.io
+        event-type: create-release-tag
+        # 传递一个包含 tag 和 message 的完整 JSON
+        client-payload: >
+          {
+            "tag": "${{ steps.extract_tag.outputs.tag_name }}",
+            "message": "${{ github.event.head_commit.message }}"
+          }
