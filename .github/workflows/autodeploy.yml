@@ -65,6 +65,12 @@ jobs:
 
         git config user.name 'Waynenet'
         git config user.email '54445994+Waynenet@users.noreply.github.com'
+        
+        # 临时调试命令
+        echo "Token前5位：${HEXO:0:5}"
+
+        git pull --rebase origin main || echo "首次部署，跳过pull"
+
         git add -A
 
         if git diff-index --quiet HEAD --; then
