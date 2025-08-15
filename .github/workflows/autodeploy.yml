@@ -1,11 +1,9 @@
 name: 自动部署
 
-# 当有改动推送到master分支时，启动Action
 on:
   push:
     branches:
       - master
-      # 2020年10月后github新建仓库默认分支改为main，注意更改
   release:
     types:
       - published
@@ -22,7 +20,7 @@ jobs:
     - name: 安装 Node
       uses: actions/setup-node@v4
       with:
-        node-version: "22.x" # action使用的node版本，建议大版本和本地保持一致。可以在本地用node -v查询版本号。
+        node-version: "22.x"
 
     - name: 安装 Hexo
       run: |
@@ -40,8 +38,7 @@ jobs:
 
     - name: 安装依赖
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
-      run: |
-        npm install --save
+      run: npm install --save
 
     - name: 生成静态文件
       run: |
@@ -51,35 +48,7 @@ jobs:
         gulp
         gulp pwa
 
-    - name: 部署到 GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        # 部署所需的 Personal Access Token (PAT)
-        personal_token: ${{ secrets.HEXO }}
-
-        # 部署的目标仓库
-        external_repository: Waynenet/Waynenet.github.io
-
-        # 部署的目标分支
-        publish_branch: main
-
-        # 需要部署的文件夹
-        publish_dir: ./public
-
-        # 设置为 true，保留目标仓库中已存在但本次部署未覆盖的文件
-        keep_files: true
-
-        # 提交部署的用户信息
-        user_name: 'Waynenet'
-        user_email: '54445994+Waynenet@users.noreply.github.com'
-
-        # 自定义提交信息
-        commit_message: ${{ github.event.head_commit.message }}
-
     - name: 检查提交信息并提取版本号
-      # 从最新的 commit message 中用正则表达式提取版本号
-      # 例如 "release v1.2.3" 或 "Release v1.2.3"
-      # 并将提取到的版本号设置到一个输出变量 `tag_name` 中
       id: extract_tag
       run: |
         COMMIT_MSG="${{ github.event.head_commit.message }}"
@@ -91,15 +60,30 @@ jobs:
           echo "tag_name=" >> $GITHUB_OUTPUT
         fi
 
-    - name: 发送 Release Tag 通知
-      # 仅当上一步成功提取到 tag_name 时才运行此步骤
+    - name: 部署
+      run: |
+        git clone "https://Waynenet:${{ secrets.HEXO }}@github.com/Waynenet/Waynenet.github.io.git" deploy_repo
+        cd deploy_repo
+        ls -A | grep -vE '^(\.git|\.github|README\.md)$' | xargs -r rm -rf
+        cp -r ../public/. .
+        git config user.name 'Waynenet'
+        git config user.email '54445994+Waynenet@users.noreply.github.com'
+        git add -A
+        if git diff-index --quiet HEAD --; then
+          echo "没有文件变更，无需提交。"
+        else
+          git commit -m "Deploy: ${{ github.event.head_commit.message }}"
+          git push
+          echo "部署成功！"
+        fi
+
+    - name: 触发目标仓库的 Release 创建流程
       if: steps.extract_tag.outputs.tag_name != ''
       uses: peter-evans/repository-dispatch@v3
       with:
         token: ${{ secrets.HEXO }}
         repository: Waynenet/Waynenet.github.io
         event-type: create-release-tag
-        # 传递一个包含 tag 和 message 的完整 JSON
         client-payload: >
           {
             "tag": "${{ steps.extract_tag.outputs.tag_name }}",
