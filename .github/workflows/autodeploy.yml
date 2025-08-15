@@ -71,5 +71,5 @@ jobs:
           echo "没有变更，无需提交"
         else
           git commit -m "${{ github.event.head_commit.message }} $(date +"%Z %Y-%m-%d %A %H:%M:%S") 增量更新 By Github Actions"
-          git push "https://Waynenet:${{ secrets.GITHUBTOKEN }}@github.com/Waynenet/Waynenet.github.io.git" main
+          git push "https://Waynenet:${{ secrets.HEXO }}@github.com/Waynenet/Waynenet.github.io.git" main
         fi
