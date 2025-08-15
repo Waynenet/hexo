@@ -14,14 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 检查分支
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         ref: master
 
     - name: 安装 Node
       uses: actions/setup-node@v4
       with:
-        node-version: "20.x" #action使用的node版本，建议大版本和本地保持一致。可以在本地用node -v查询版本号。
+        node-version: "22.x" #action使用的node版本，建议大版本和本地保持一致。可以在本地用node -v查询版本号。
 
     - name: 安装 Hexo
       run: |
@@ -48,12 +48,28 @@ jobs:
         gulp
         gulp pwa
 
-    - name: 部署 #此处main:main 指从本地的main分支提交到远程仓库的main分支，若远程仓库没有对应分支则新建一个。如有其他需要，可以根据自己的需求更改。
+    - name: 部署
       run: |
-        cd ./public
-        git init
-        git config --global user.name 'Wayne'
-        git config --global user.email 'way8941@gmail.com'
-        git add .
-        git commit -m "${{ github.event.head_commit.message }} $(date +"%Z %Y-%m-%d %A %H:%M:%S") Updated By Github Actions"
-        git push --force --quiet "https://Waynenet:${{ secrets.GITHUBTOKEN }}@github.com/Waynenet/Waynenet.github.io.git" master:main
+        git clone https://github.com/Waynenet/Waynenet.github.io.git deploy-repo
+        cd deploy-repo
+        git checkout main
+
+        # 清空仓库，但保留以下关键文件和目录：
+        find . -path ./.git -prune -o \
+               -path ./.github -prune -o \
+               -name 'README.md' -prune -o \
+               -exec rm -rf {} \; 2> /dev/null
+
+        # 复制 public 内容（-n 避免覆盖已保留的文件）
+        cp -rn ../public/* .
+
+        git config user.name 'Waynenet'
+        git config user.email '54445994+Waynenet@users.noreply.github.com'
+        git add -A
+
+        if git diff-index --quiet HEAD --; then
+          echo "没有变更，无需提交"
+        else
+          git commit -m "${{ github.event.head_commit.message }} $(date +"%Z %Y-%m-%d %A %H:%M:%S") 增量更新 By Github Actions"
+          git push "https://Waynenet:${{ secrets.GITHUBTOKEN }}@github.com/Waynenet/Waynenet.github.io.git" main
+        fi
