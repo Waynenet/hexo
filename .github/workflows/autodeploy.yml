@@ -72,7 +72,7 @@ jobs:
         if git diff-index --quiet HEAD --; then
           echo "没有文件变更，无需提交。"
         else
-          git commit -m "Deploy: ${{ github.event.head_commit.message }}"
+          git commit -m "${{ github.event.head_commit.message }}"
           git push
           echo "部署成功！"
         fi
