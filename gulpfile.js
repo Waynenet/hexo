@@ -69,7 +69,7 @@ function minifyHtml() {
 // 复制原始字体文件到 dist 目录，为 font-spider 做准备
 function copyFonts() {
     return src(`${paths.src}/font/*.{eot,svg,ttf,woff,woff2}`)
-        .pipe(dest(paths.dist));
+        .pipe(dest(`${paths.dist}/font`))
 }
 
 // 运行字体子集化
