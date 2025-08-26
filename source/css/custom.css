@@ -173,7 +173,7 @@
 @font-face {
   font-family: 'LXGWWenKai-Regular';
   /* 字体名自定义即可 */
-  src: url('/fontdest/LXGWWenKai-Regular.ttf');
+  src: url('/font/LXGWWenKai-Regular.ttf');
   /* 字体文件路径 */
   font-display: swap;
 }
