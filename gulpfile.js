@@ -8,7 +8,6 @@ const cleanCSS = require('gulp-clean-css');
 const fontSpider = require('gulp-font-spider');
 const workbox = require("workbox-build");
 const { deleteAsync } = require('del');
-const gulpIf = require('gulp-if');
 
 // ===============================================================
 // 2. 路径配置 (Path Configuration)
@@ -37,15 +36,20 @@ function minifyJs() {
     .pipe(dest(paths.dist));
 }
 
-// 一次性处理字体子集化、CSS 和 HTML 压缩
-function buildHtmlCssFonts() {
-  return src(`${paths.src}/**/*.html`) // 必须以 HTML 文件作为入口
-    .pipe(fontSpider({
-      // 忽略所有外部 CDN 的 CSS 文件，只处理本地 CSS
-      ignore: [/^https?:\/\//, /^\/\//]
+// 压缩 CSS
+function minifyCss() {
+  return src([`${paths.src}/**/*.css`, `!${paths.src}/**/*.min.css`])
+    .pipe(cleanCSS({ compatibility: 'ie11' }).on('error', (err) => {
+      console.error('CSS Minify Error:', err.message);
+      this.emit('end');
     }))
-    .pipe(gulpIf('*.css', cleanCSS({ compatibility: 'ie11' }))) // 如果是 CSS 文件，则压缩它
-    .pipe(gulpIf('*.html', htmlMin({ // 如果是 HTML 文件，则压缩它
+    .pipe(dest(paths.dist));
+}
+
+// 压缩 HTML
+function minifyHtml() {
+  return src(`${paths.src}/**/*.html`)
+    .pipe(htmlMin({
       removeComments: true,
       collapseWhitespace: true,
       collapseInlineTagWhitespace: true,
@@ -58,8 +62,24 @@ function buildHtmlCssFonts() {
       minifyJS: true,
       minifyCSS: true,
       minifyURLs: true
-    })))
-    .pipe(dest(paths.dist)); // 将处理好的 HTML, CSS, 和字体子集输出到 dist 目录
+    }))
+    .pipe(dest(paths.dist));
+}
+
+// 复制原始字体文件到 dist 目录，为 font-spider 做准备
+function copyFonts() {
+    return src(`${paths.src}/font/*.{eot,svg,ttf,woff,woff2}`)
+        .pipe(dest(paths.dist));
+}
+
+// 运行字体子集化
+function runFontSpider() {
+    // font-spider 需要分析构建后的 HTML 文件
+    return src(`${paths.dist}/**/*.html`)
+        .pipe(fontSpider({
+
+        }))
+        .pipe(dest(paths.dist));
 }
 
 // 生成 Service Worker
@@ -72,7 +92,8 @@ function generateServiceWorker() {
       "404.html",
       "index.html",
       "js/main.js",
-      "css/index.css"
+      "css/index.css",
+      "font/*.{woff,woff2,ttf,eot}" 
     ],
     modifyURLPrefix: { "": "./" }
   });
@@ -82,9 +103,9 @@ function generateServiceWorker() {
 // 4. 任务组合 (Task Composition)
 // ===============================================================
 
-const buildAssets = parallel(minifyJs, buildHtmlCssFonts);
+const buildAssets = parallel(minifyJs, minifyCss, minifyHtml, copyFonts);
 
-const build = series(clean, buildAssets);
+const build = series(clean, buildAssets, runFontSpider);
 
 const pwa = series(build, generateServiceWorker);
 
