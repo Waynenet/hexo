@@ -77,7 +77,7 @@ function runFontSpider() {
     // font-spider 需要分析构建后的 HTML 文件
     return src(`${paths.dist}/**/*.html`)
         .pipe(fontSpider({
-
+            ignore: [/^https?:\/\//, /^\/\//]
         }))
         .pipe(dest(paths.dist));
 }
