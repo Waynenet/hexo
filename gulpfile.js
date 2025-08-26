@@ -32,7 +32,7 @@ function minifyJs() {
   return src([`${paths.src}/**/*.js`, `!${paths.src}/**/*.min.js`])
     .pipe(terser({}).on('error', (err) => {
       console.error('JS Minify Error:', err.message);
-      this.emit('end'); // 发生错误时结束流，防止 Gulp 进程卡住
+      this.emit('end');
     }))
     .pipe(dest(paths.dist));
 }
@@ -40,7 +40,10 @@ function minifyJs() {
 // 一次性处理字体子集化、CSS 和 HTML 压缩
 function buildHtmlCssFonts() {
   return src(`${paths.src}/**/*.html`) // 必须以 HTML 文件作为入口
-    .pipe(fontSpider()) // font-spider 会自动处理关联的 CSS 和字体
+    .pipe(fontSpider({
+      // 忽略所有外部 CDN 的 CSS 文件，只处理本地 CSS
+      ignore: [/^https?:\/\//, /^\/\//]
+    }))
     .pipe(gulpIf('*.css', cleanCSS({ compatibility: 'ie11' }))) // 如果是 CSS 文件，则压缩它
     .pipe(gulpIf('*.html', htmlMin({ // 如果是 HTML 文件，则压缩它
       removeComments: true,
@@ -62,17 +65,14 @@ function buildHtmlCssFonts() {
 // 生成 Service Worker
 function generateServiceWorker() {
   return workbox.injectManifest({
-    swSrc: './sw-template.js',    // Service Worker 模板文件
-    swDest: `${paths.dist}/sw.js`, // 输出到 dist 目录
-    globDirectory: paths.dist,     // 从 dist 目录中预缓存文件
+    swSrc: './sw-template.js',
+    swDest: `${paths.dist}/sw.js`,
+    globDirectory: paths.dist,
     globPatterns: [
-      // 精准缓存必要的文件
       "404.html",
       "index.html",
       "js/main.js",
       "css/index.css"
-      // 如果有字体，也应该缓存
-      // "font/*.woff2" 
     ],
     modifyURLPrefix: { "": "./" }
   });
@@ -82,11 +82,10 @@ function generateServiceWorker() {
 // 4. 任务组合 (Task Composition)
 // ===============================================================
 
-// 将核心任务与 JS 压缩任务并行执行
 const buildAssets = parallel(minifyJs, buildHtmlCssFonts);
-// 完整的构建流程
+
 const build = series(clean, buildAssets);
-// PWA 任务
+
 const pwa = series(build, generateServiceWorker);
 
 // ===============================================================
@@ -95,4 +94,4 @@ const pwa = series(build, generateServiceWorker);
 exports.clean = clean;
 exports.build = build;
 exports.pwa = pwa;
-exports.default = build; // 将 `gulp` 命令默认指向 `build` 任务
+exports.default = build;
