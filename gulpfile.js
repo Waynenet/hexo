@@ -7,8 +7,8 @@ const terser = require('gulp-terser');
 const cleanCSS = require('gulp-clean-css');
 const fontSpider = require('gulp-font-spider');
 const workbox = require("workbox-build");
-// 引入一个用于清理目录的插件
 const { deleteAsync } = require('del');
+const gulpIf = require('gulp-if');
 
 // ===============================================================
 // 2. 路径配置 (Path Configuration)
@@ -37,20 +37,12 @@ function minifyJs() {
     .pipe(dest(paths.dist));
 }
 
-// 压缩 CSS
-function minifyCss() {
-  return src([`${paths.src}/**/*.css`, `!${paths.src}/**/*.min.css`]) // 同样建议排除 .min.css
-    .pipe(cleanCSS({ compatibility: 'ie11' }).on('error', (err) => {
-      console.error('CSS Minify Error:', err.message);
-      this.emit('end');
-    }))
-    .pipe(dest(paths.dist));
-}
-
-// 压缩 HTML
-function minifyHtml() {
-  return src(`${paths.src}/**/*.html`)
-    .pipe(htmlMin({
+// 一次性处理字体子集化、CSS 和 HTML 压缩
+function buildHtmlCssFonts() {
+  return src(`${paths.src}/**/*.html`) // 必须以 HTML 文件作为入口
+    .pipe(fontSpider()) // font-spider 会自动处理关联的 CSS 和字体
+    .pipe(gulpIf('*.css', cleanCSS({ compatibility: 'ie11' }))) // 如果是 CSS 文件，则压缩它
+    .pipe(gulpIf('*.html', htmlMin({ // 如果是 HTML 文件，则压缩它
       removeComments: true,
       collapseWhitespace: true,
       collapseInlineTagWhitespace: true,
@@ -63,40 +55,8 @@ function minifyHtml() {
       minifyJS: true,
       minifyCSS: true,
       minifyURLs: true
-    }).on('error', (err) => {
-      console.error('HTML Minify Error:', err.message);
-      this.emit('end');
-    }))
-    .pipe(dest(paths.dist));
-}
-
-// 压缩字体 (这是一个辅助函数，不是独立的 Gulp 任务)
-function minifyFont(text, cb) {
-  src(`${paths.src}/font/*.ttf`)
-    .pipe(fontSpider({ text }).on('error', (err) => {
-      console.error('Font Minify Error:', err.message);
-      cb(err);
-    }))
-    .pipe(dest(`${paths.dist}/font`)) // 输出到 dist 目录
-    .on('end', cb);
-}
-
-// 字体子集化任务
-function fontSubsetting(cb) {
-  let buffers = [];
-  // 注意：从构建后的 dist 目录读取 HTML，因为里面的 JS/CSS 可能也被压缩了
-  src(`${paths.dist}/**/*.html`)
-    .on('data', (file) => {
-      buffers.push(file.contents);
-    })
-    .on('end', () => {
-      const text = Buffer.concat(buffers).toString('utf-8');
-      minifyFont(text, cb);
-    })
-    .on('error', (err) => {
-      console.error('HTML Read Error for Font Minification:', err.message);
-      cb(err);
-    });
+    })))
+    .pipe(dest(paths.dist)); // 将处理好的 HTML, CSS, 和字体子集输出到 dist 目录
 }
 
 // 生成 Service Worker
@@ -122,16 +82,11 @@ function generateServiceWorker() {
 // 4. 任务组合 (Task Composition)
 // ===============================================================
 
-// 构建任务 (不包含字体和 PWA)
-const buildAssets = parallel(minifyJs, minifyCss, minifyHtml);
-
+// 将核心任务与 JS 压缩任务并行执行
+const buildAssets = parallel(minifyJs, buildHtmlCssFonts);
 // 完整的构建流程
-// 1. 清理 dist 目录
-// 2. 并行压缩 JS, CSS, HTML
-// 3. 在压缩后的 HTML 基础上，进行字体子集化 (注意：这里用了 series 确保顺序)
-const build = series(clean, buildAssets, fontSubsetting);
-
-// PWA 任务：在完整构建之后，生成 Service Worker
+const build = series(clean, buildAssets);
+// PWA 任务
 const pwa = series(build, generateServiceWorker);
 
 // ===============================================================
