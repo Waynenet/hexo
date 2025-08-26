@@ -45,7 +45,6 @@ jobs:
         hexo clean
         hexo generate
         hexo douban
-        gulp
         gulp pwa
 
     - name: 检查提交信息并提取版本号
