@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "del": "^8.0.0",
+    "glob": "^11.0.3",
     "gulp-clean-css": "^4.3.0",
     "gulp-font-spider": "^0.3.6",
     "gulp-html-minifier-terser": "^7.1.0",

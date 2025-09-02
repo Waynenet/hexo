@@ -2,6 +2,8 @@
 // 1. 引入插件 (Imports)
 // ===============================================================
 const { src, dest, series, parallel } = require('gulp');
+const { glob } = require('glob');
+const fancyLog = require('fancy-log'); // 用于更好的日志输出
 const htmlMin = require('gulp-html-minifier-terser');
 const terser = require('gulp-terser');
 const cleanCSS = require('gulp-clean-css');
@@ -82,6 +84,27 @@ function runFontSpider() {
         .pipe(dest(paths.dist));
 }
 
+function handleFonts(cb) {
+    const fontSrcPath = `${paths.src}/font/*.{eot,svg,ttf,woff,woff2}`;
+    
+    // 使用 glob 异步查找匹配的文件
+    glob(fontSrcPath, (err, files) => {
+        if (err) {
+            // 如果 glob 本身出错，则报告错误
+            return cb(err);
+        }
+        if (files.length === 0) {
+            // 如果没有找到文件
+            fancyLog('No font files found. Skipping font subsetting.');
+            return cb(); // 调用回调函数 cb()，表示此任务成功完成
+        }
+        // 如果找到了文件，则执行完整的字体处理流程
+        fancyLog(`Found ${files.length} font file(s). Starting subsetting process...`);
+        // 执行 series(copyFonts, runFontSpider) 并将 cb 传递给它
+        return series(copyFonts, runFontSpider)(cb);
+    });
+}
+
 // 生成 Service Worker
 function generateServiceWorker() {
   return workbox.injectManifest({
@@ -92,8 +115,8 @@ function generateServiceWorker() {
       "404.html",
       "index.html",
       "js/main.js",
-      "css/index.css",
-      "font/*.{woff,woff2,ttf,eot}" 
+      "css/index.css"
+      // "font/*.{woff,woff2,ttf,eot}" 
     ],
     modifyURLPrefix: { "": "./" }
   });
@@ -103,9 +126,9 @@ function generateServiceWorker() {
 // 4. 任务组合 (Task Composition)
 // ===============================================================
 
-const buildAssets = parallel(minifyJs, minifyCss, minifyHtml, copyFonts);
+const buildAssets = parallel(minifyJs, minifyCss, minifyHtml);
 
-const build = series(clean, buildAssets, runFontSpider);
+const build = series(clean, buildAssets, handleFonts);
 
 const pwa = series(build, generateServiceWorker);
 

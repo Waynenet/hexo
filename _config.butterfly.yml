@@ -1072,7 +1072,7 @@ aplayerInject:
 # position: top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
   enable: false
-  position: bottom-left
+  position: top-center
   # The background color of Toast Notification in light mode and dark mode
   bg_light: '#49b1f5'
   bg_dark: '#1f1f1f'
@@ -1119,7 +1119,7 @@ Open_Graph_meta:
 # Structured Data
 # https://developers.google.com/search/docs/guides/intro-structured-data
 structured_data:
-  enable: true
+  enable: false
   # Alternate name for the site, used in structured data
   # Format: ['name1', 'name2']
   alternate_name: ['W-Blog']
@@ -1133,6 +1133,9 @@ inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
     - <link rel="stylesheet" href="/css/custom.css">
+    # - <!-- LXGW WenKai -->
+    - <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/lxgwwenkai-regular/result.css" media="print" onload="this.media='all'">
+    - <noscript><link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/lxgwwenkai-regular/result.css"></noscript>
   bottom:
     # - <script src="xxxx"></script>
     - <canvas id="universe"></canvas>
