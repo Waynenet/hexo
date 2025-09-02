@@ -84,23 +84,21 @@ function runFontSpider() {
         .pipe(dest(paths.dist));
 }
 
-function handleFonts() {
+function handleFonts(done) {
     const fontSrcPath = `${paths.src}/font/*.{eot,svg,ttf,woff,woff2}`;
     
-    // 使用 glob 的同步版本来查找文件。代码会在这里暂停，直到文件查找完成。
     const files = globSync(fontSrcPath);
 
     if (files.length === 0) {
-        // 情况一：没有找到字体文件
+        // 情况一：没有字体文件。
         fancyLog('No font files found. Skipping font subsetting.');
-        // 返回一个立即完成的空任务。
-        return (done) => done();
+        done();
+    } else {
+        // 情况二：有字体文件。
+        fancyLog(`Found ${files.length} font file(s). Starting subsetting process...`);
+        // 我们需要执行一个 series，并且当这个 series 完成后，再调用 done()。
+        return series(copyFonts, runFontSpider)(done);
     }
-
-    // 情况二：找到了字体文件
-    fancyLog(`Found ${files.length} font file(s). Starting subsetting process...`);
-    // 返回 Gulp 需要执行的真实任务序列。 Gulp 会接收这个返回值，然后依次执行 copyFonts 和 runFontSpider。
-    return series(copyFonts, runFontSpider);
 }
 
 // 生成 Service Worker
