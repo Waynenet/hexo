@@ -84,25 +84,39 @@ function runFontSpider() {
         .pipe(dest(paths.dist));
 }
 
-function handleFonts(cb) {
+function handleFonts() {
+  // 返回一个新的 Promise，这是告诉 Gulp 这是一个异步任务的标准方式之一
+  return new Promise((resolve, reject) => {
     const fontSrcPath = `${paths.src}/font/*.{eot,svg,ttf,woff,woff2}`;
-    
-    // 使用 glob 异步查找匹配的文件
+
     glob(fontSrcPath, (err, files) => {
-        if (err) {
-            // 如果 glob 本身出错，则报告错误
-            return cb(err);
+      if (err) {
+        // 如果 glob 本身出错，让 Promise 失败，Gulp 会捕获并停止
+        return reject(err);
+      }
+
+      if (files.length === 0) {
+        fancyLog('No font files found. Skipping font subsetting.');
+        // 如果没有文件，让 Promise 成功解决，任务完成
+        return resolve();
+      }
+
+      fancyLog(`Found ${files.length} font file(s). Starting subsetting process...`);
+
+      // 如果有文件，我们执行字体处理序列。
+      // series() 函数本身可以接受一个回调函数，在序列完成或失败时触发。
+      const processFontSeries = series(copyFonts, runFontSpider);
+      
+      processFontSeries((seriesErr) => {
+        if (seriesErr) {
+          // 如果字体处理序列中任何一个任务失败，让 Promise 失败
+          return reject(seriesErr);
         }
-        if (files.length === 0) {
-            // 如果没有找到文件
-            fancyLog('No font files found. Skipping font subsetting.');
-            return cb(); // 调用回调函数 cb()，表示此任务成功完成
-        }
-        // 如果找到了文件，则执行完整的字体处理流程
-        fancyLog(`Found ${files.length} font file(s). Starting subsetting process...`);
-        // 执行 series(copyFonts, runFontSpider) 并将 cb 传递给它
-        return series(copyFonts, runFontSpider)(cb);
+        // 如果序列成功完成，让 Promise 成功解决
+        resolve();
+      });
     });
+  });
 }
 
 // 生成 Service Worker
