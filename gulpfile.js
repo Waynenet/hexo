@@ -2,7 +2,7 @@
 // 1. 引入插件 (Imports)
 // ===============================================================
 const { src, dest, series, parallel } = require('gulp');
-const { glob } = require('glob');
+const { globSync } = require('glob');
 const fancyLog = require('fancy-log'); // 用于更好的日志输出
 const htmlMin = require('gulp-html-minifier-terser');
 const terser = require('gulp-terser');
@@ -85,38 +85,22 @@ function runFontSpider() {
 }
 
 function handleFonts() {
-  // 返回一个新的 Promise，这是告诉 Gulp 这是一个异步任务的标准方式之一
-  return new Promise((resolve, reject) => {
     const fontSrcPath = `${paths.src}/font/*.{eot,svg,ttf,woff,woff2}`;
+    
+    // 使用 glob 的同步版本来查找文件。代码会在这里暂停，直到文件查找完成。
+    const files = globSync(fontSrcPath);
 
-    glob(fontSrcPath, (err, files) => {
-      if (err) {
-        // 如果 glob 本身出错，让 Promise 失败，Gulp 会捕获并停止
-        return reject(err);
-      }
-
-      if (files.length === 0) {
+    if (files.length === 0) {
+        // 情况一：没有找到字体文件
         fancyLog('No font files found. Skipping font subsetting.');
-        // 如果没有文件，让 Promise 成功解决，任务完成
-        return resolve();
-      }
+        // 返回一个立即完成的空任务。
+        return (done) => done();
+    }
 
-      fancyLog(`Found ${files.length} font file(s). Starting subsetting process...`);
-
-      // 如果有文件，我们执行字体处理序列。
-      // series() 函数本身可以接受一个回调函数，在序列完成或失败时触发。
-      const processFontSeries = series(copyFonts, runFontSpider);
-      
-      processFontSeries((seriesErr) => {
-        if (seriesErr) {
-          // 如果字体处理序列中任何一个任务失败，让 Promise 失败
-          return reject(seriesErr);
-        }
-        // 如果序列成功完成，让 Promise 成功解决
-        resolve();
-      });
-    });
-  });
+    // 情况二：找到了字体文件
+    fancyLog(`Found ${files.length} font file(s). Starting subsetting process...`);
+    // 返回 Gulp 需要执行的真实任务序列。 Gulp 会接收这个返回值，然后依次执行 copyFonts 和 runFontSpider。
+    return series(copyFonts, runFontSpider);
 }
 
 // 生成 Service Worker
