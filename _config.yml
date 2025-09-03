@@ -86,7 +86,6 @@ deploy:
   repository: git@github.com:Waynenet/Waynenet.github.io.git
   branch: main
 
-
 douban:
   id: 60094270
   builtin: false
@@ -121,7 +120,6 @@ douban:
   #   option:
   timeout: 20000 
 
-
 # Ice Kano Plus_in
 # Hexo Github Canlendar
 # Author: Ice Kano
@@ -150,7 +148,6 @@ githubcalendar:
   calendar_js: https://gcore.jsdelivr.net/npm/wayne-img@latest/js/hexo_githubcalendar.js
   plus_style: ""
 
-
 feed:
   enable: true
   type: atom
@@ -164,7 +161,6 @@ feed:
   icon: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/logo.png
   autodiscovery: true
   template:
-
 
 aplayer:
   asset_inject: false

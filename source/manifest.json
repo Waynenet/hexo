@@ -1,8 +1,8 @@
 {
-    "lang": "en",
+    "lang": "zh-CN",
     "dir": "ltr",
     "name": "WayneのBlog",
-    "description": "WayneのBlog",
+    "description": "都将万事 付与千钟",
     "display": "standalone",
     "short_name": "Wayne",
     "scope": "/",

@@ -11,9 +11,9 @@ top_img: https://gcore.jsdelivr.net/npm/wayne-img@latest/blog/imgs/sea-7252122_1
 
 ```PLAINTEXT
 Name：Wayne
-Blog：https://blog.kong.pub/
-Homepage：https://kong.pub/
-Navigation：https://nav.kong.pub/
+Blog：https://Waynenet.github.io/
+Homepage：https://home.3301.qzz.io/
+Navigation：https://nav.3301.qzz.io/
 Github：https://github.com/Waynenet/
 Hobbies：个人主义者，闲散人士，编程小白，游戏菜鸟，影视迷，音乐狂，诗人，怪客。
 ```
