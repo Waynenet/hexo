@@ -16,6 +16,7 @@ jobs:
       uses: actions/checkout@v5
       with:
         ref: master
+        fetch-depth: 0
 
     - name: 安装 Node
       uses: actions/setup-node@v4
@@ -59,6 +60,41 @@ jobs:
           echo "tag_name=" >> $GITHUB_OUTPUT
         fi
 
+    - name: 生成变更日志
+      id: generate_changelog
+      if: steps.extract_tag.outputs.tag_name != ''
+      run: |
+        # 搜索所有符合发布格式的提交，并只输出它们的 commit hash
+        RELEASE_COMMITS=$(git log --grep="[Rr]elease[[:space:]]+v[0-9]" --pretty=format:'%H')
+
+        # 计算找到了多少个发布提交
+        RELEASE_COUNT=$(echo "$RELEASE_COMMITS" | wc -l)
+
+        # 当前的 HEAD 就是最新的发布提交。我们需要找到它之前的那个。
+        if [ "$RELEASE_COUNT" -lt 2 ]; then
+          echo "未找到上一个发布版本的提交。将使用从初始提交到当前的所有提交记录。"
+          COMMIT_RANGE="HEAD" # 从最初到当前
+        else
+          # 获取列表中的第二个 hash，即上一个发布的 hash
+          # `head -n 2` 取前两个，`tail -n 1` 取这两个中的最后一个
+          PREVIOUS_RELEASE_HASH=$(echo "$RELEASE_COMMITS" | head -n 2 | tail -n 1)
+          echo "找到上一个发布版本的提交: $PREVIOUS_RELEASE_HASH"
+          COMMIT_RANGE="$PREVIOUS_RELEASE_HASH..HEAD" # 定义范围
+        fi
+        
+        # 生成最终的变更日志，--no-merges 排除合并提交，让日志更干净
+        # 同时，使用 grep -v 排除掉 "Release v..." 这条提交信息本身，因为它不是功能变更
+        CHANGELOG_BODY=$(git log $COMMIT_RANGE --pretty=format:'- %s (%h) - %an' --no-merges | grep -v '^[Rr]elease[[:space:]]+v' || true)
+        
+        if [ -z "$CHANGELOG_BODY" ]; then
+          CHANGELOG_BODY="自上次发布以来没有新的功能性提交。"
+        fi
+
+        # 使用 GITHUB_ENV 将多行字符串传递给后续步骤
+        echo "changelog<<EOF" >> $GITHUB_ENV
+        echo "$CHANGELOG_BODY" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+ 
     - name: 部署
       run: |
         git clone "https://Waynenet:${{ secrets.HEXO }}@github.com/Waynenet/Waynenet.github.io.git" deploy_repo
@@ -86,5 +122,5 @@ jobs:
         client-payload: >
           {
             "tag": "${{ steps.extract_tag.outputs.tag_name }}",
-            "message": "${{ github.event.head_commit.message }}"
+            "message": ${{ toJSON(env.changelog) }}
           }
