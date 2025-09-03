@@ -65,12 +65,12 @@ jobs:
       if: steps.extract_tag.outputs.tag_name != ''
       run: |
         # 搜索所有符合发布格式的提交
-        RELEASE_COMMITS=$(git log --grep="[Rr]elease[[:space:]]+v[0-9]" --pretty=format:'%H')
+        RELEASE_COMMITS=$(git log -E --grep="[Rr]elease[[:space:]]+v[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?" --pretty=format:'%H')
         RELEASE_COUNT=$(echo "$RELEASE_COMMITS" | wc -l)
 
         if [ "$RELEASE_COUNT" -lt 2 ]; then
           echo "未找到上一个发布版本的提交。将使用从初始提交到当前的所有提交记录。"
-          COMMIT_RANGE="HEAD"
+          COMMIT_RANGE=""
         else
           # 获取上一个发布的 hash
           # `head -n 2` 取前两个，`tail -n 1` 取这两个中的最后一个
