@@ -1132,10 +1132,7 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
-    - <link rel="stylesheet" href="/css/custom.css">
-    # - <!-- LXGW WenKai -->
-    - <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/lxgwwenkai-regular/result.css" media="print" onload="this.media='all'">
-    - <noscript><link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/lxgwwenkai-regular/result.css"></noscript>
+    - <link rel="stylesheet" href="../css/custom.css">
   bottom:
     # - <script src="xxxx"></script>
     - <canvas id="universe"></canvas>

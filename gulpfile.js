@@ -2,55 +2,62 @@
 // 1. 引入插件 (Imports)
 // ===============================================================
 const { src, dest, series, parallel } = require('gulp');
-const { globSync } = require('glob');
-const fancyLog = require('fancy-log'); // 用于更好的日志输出
+const { glob } = require('glob');
+const fancyLog = require('fancy-log');
 const htmlMin = require('gulp-html-minifier-terser');
 const terser = require('gulp-terser');
 const cleanCSS = require('gulp-clean-css');
 const fontSpider = require('gulp-font-spider');
 const workbox = require("workbox-build");
-const { deleteAsync } = require('del');
 
 // ===============================================================
 // 2. 路径配置 (Path Configuration)
 // ===============================================================
-const paths = {
-  src: 'public', // 源文件目录
-  dist: 'dist'    // 构建输出目录
+const config = {
+  // 基础目录
+  baseDir: 'public',
+  // 源文件匹配模式 (Globs)
+  sources: {
+    js:    ['public/**/*.js', '!public/**/*.min.js'],
+    css:   ['public/**/*.css', '!public/**/*.min.css'],
+    html:  'public/**/*.html',
+    fonts: 'public/font/*.{eot,svg,ttf,woff,woff2}',
+  },
+  // Service Worker 配置
+  sw: {
+    template: './sw-template.js',
+    output: 'public/sw.js',
+    globPattern: '**/*.{html,js,css}',
+    globIgnores: ['sw.js']
+  }
 };
 
 // ===============================================================
 // 3. 任务定义 (Task Definitions)
 // ===============================================================
-
-// 清理构建目录
-function clean() {
-  return deleteAsync([paths.dist]);
-}
-
 // 压缩 JavaScript
 function minifyJs() {
-  return src([`${paths.src}/**/*.js`, `!${paths.src}/**/*.min.js`])
-    .pipe(terser({}).on('error', (err) => {
-      console.error('JS Minify Error:', err.message);
+  return src(config.sources.js, { base: config.baseDir })
+    .pipe(terser().on('error', (err) => {
+      fancyLog.error('JS Minify Error:', err.message);
       this.emit('end');
     }))
-    .pipe(dest(paths.dist));
+    .pipe(dest(config.baseDir));
 }
 
 // 压缩 CSS
 function minifyCss() {
-  return src([`${paths.src}/**/*.css`, `!${paths.src}/**/*.min.css`])
+  return src(config.sources.css, { base: config.baseDir })
     .pipe(cleanCSS({ compatibility: 'ie11' }).on('error', (err) => {
-      console.error('CSS Minify Error:', err.message);
+      fancyLog.error('CSS Minify Error:', err.message);
       this.emit('end');
     }))
-    .pipe(dest(paths.dist));
+    .pipe(dest(config.baseDir));
 }
 
 // 压缩 HTML
 function minifyHtml() {
-  return src(`${paths.src}/**/*.html`)
+  return src(config.sources.html, { base: config.baseDir })
     .pipe(htmlMin({
       removeComments: true,
       collapseWhitespace: true,
@@ -65,55 +72,33 @@ function minifyHtml() {
       minifyCSS: true,
       minifyURLs: true
     }))
-    .pipe(dest(paths.dist));
+    .pipe(dest(config.baseDir));
 }
 
-// 复制原始字体文件到 dist 目录，为 font-spider 做准备
-function copyFonts() {
-    return src(`${paths.src}/font/*.{eot,svg,ttf,woff,woff2}`)
-        .pipe(dest(`${paths.dist}/font`))
-}
-
-// 运行字体子集化
-function runFontSpider() {
-    // font-spider 需要分析构建后的 HTML 文件
-    return src(`${paths.dist}/**/*.html`)
-        .pipe(fontSpider({
-            ignore: [/^https?:\/\//, /^\/\//]
-        }))
-        .pipe(dest(paths.dist));
-}
-
-function handleFonts(done) {
-    const fontSrcPath = `${paths.src}/font/*.{eot,svg,ttf,woff,woff2}`;
-    
-    const files = globSync(fontSrcPath);
-
-    if (files.length === 0) {
-        // 情况一：没有字体文件。
-        fancyLog('No font files found. Skipping font subsetting.');
-        done();
-    } else {
-        // 情况二：有字体文件。
-        fancyLog(`Found ${files.length} font file(s). Starting subsetting process...`);
-        // 我们需要执行一个 series，并且当这个 series 完成后，再调用 done()。
-        return series(copyFonts, runFontSpider)(done);
-    }
+async function handleFonts() {
+  const fontFiles = await glob(config.sources.fonts);
+  
+  if (fontFiles.length === 0) {
+    fancyLog('No font files found. Skipping font subsetting.');
+    return;
+  } 
+  
+  fancyLog(`Found ${fontFiles.length} font file(s). Starting subsetting process...`);
+  return src(config.sources.html, { base: config.baseDir })
+    .pipe(fontSpider({
+        ignore: [/^https?:\/\//, /^\/\//]
+    }))
+    .pipe(dest(config.baseDir));
 }
 
 // 生成 Service Worker
 function generateServiceWorker() {
   return workbox.injectManifest({
-    swSrc: './sw-template.js',
-    swDest: `${paths.dist}/sw.js`,
-    globDirectory: paths.dist,
-    globPatterns: [
-      "404.html",
-      "index.html",
-      "js/main.js",
-      "css/index.css"
-      // "font/*.{woff,woff2,ttf,eot}" 
-    ],
+    swSrc: config.sw.template,
+    swDest: config.sw.output,
+    globDirectory: config.baseDir,
+    globPatterns: [config.sw.globPattern],
+    globIgnores: config.sw.globIgnores,
     modifyURLPrefix: { "": "./" }
   });
 }
@@ -124,14 +109,13 @@ function generateServiceWorker() {
 
 const buildAssets = parallel(minifyJs, minifyCss, minifyHtml);
 
-const build = series(clean, buildAssets, handleFonts);
+const build = series(buildAssets, handleFonts);
 
 const pwa = series(build, generateServiceWorker);
 
 // ===============================================================
 // 5. 导出任务 (Exports)
 // ===============================================================
-exports.clean = clean;
 exports.build = build;
 exports.pwa = pwa;
 exports.default = build;
