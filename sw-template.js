@@ -37,21 +37,21 @@ workbox.routing.registerRoute(
 );
 
 // 字体文件（可选，不需要就注释掉）
-workbox.routing.registerRoute(
-    /\.(?:eot|ttf|woff|woff2)$/,
-    new workbox.strategies.CacheFirst({
-        cacheName: "fonts",
-        plugins: [
-            new workbox.expiration.ExpirationPlugin({
-                maxEntries: 1000,
-                maxAgeSeconds: 60 * 60 * 24 * 30
-            }),
-            new workbox.cacheableResponse.CacheableResponsePlugin({
-                statuses: [0, 200]
-            })
-        ]
-    })
-);
+// workbox.routing.registerRoute(
+//     /\.(?:eot|ttf|woff|woff2)$/,
+//     new workbox.strategies.CacheFirst({
+//         cacheName: "fonts",
+//         plugins: [
+//             new workbox.expiration.ExpirationPlugin({
+//                 maxEntries: 1000,
+//                 maxAgeSeconds: 60 * 60 * 24 * 30
+//             }),
+//             new workbox.cacheableResponse.CacheableResponsePlugin({
+//                 statuses: [0, 200]
+//             })
+//         ]
+//     })
+// );
 
 // 谷歌字体（可选，不需要就注释掉）
 //workbox.routing.registerRoute(
@@ -77,20 +77,20 @@ workbox.routing.registerRoute(
 //);
 
 // jsdelivr的CDN资源（可选，不需要就注释掉）
-//workbox.routing.registerRoute(
-//    /^https:\/\/cdn\.jsdelivr\.net/,
-//    new workbox.strategies.CacheFirst({
-//        cacheName: "static-libs",
-//        plugins: [
-//            new workbox.expiration.ExpirationPlugin({
-//                maxEntries: 1000,
-//                maxAgeSeconds: 60 * 60 * 24 * 30
-//            }),
-//            new workbox.cacheableResponse.CacheableResponsePlugin({
-//                statuses: [0, 200]
-//            })
-//        ]
-//    })
-//);
+workbox.routing.registerRoute(
+   /^https:\/\/[\w-]+\.jsdelivr\.net/,
+   new workbox.strategies.CacheFirst({
+       cacheName: "static-libs",
+       plugins: [
+           new workbox.expiration.ExpirationPlugin({
+               maxEntries: 1000,
+               maxAgeSeconds: 60 * 60 * 24 * 30
+           }),
+           new workbox.cacheableResponse.CacheableResponsePlugin({
+               statuses: [0, 200]
+           })
+       ]
+   })
+);
 
 workbox.googleAnalytics.initialize();
