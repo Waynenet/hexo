@@ -1,6 +1,6 @@
 {
   "name": "wayne-hexo",
-  "version": "5.4.3.13",
+  "version": "5.4.3.14",
   "private": true,
   "scripts": {
     "build": "hexo generate",
