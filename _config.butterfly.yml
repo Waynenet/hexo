@@ -1071,7 +1071,7 @@ aplayerInject:
 # https://github.com/polonel/SnackBar
 # position: top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
-  enable: false
+  enable: true
   position: top-center
   # The background color of Toast Notification in light mode and dark mode
   bg_light: '#49b1f5'
