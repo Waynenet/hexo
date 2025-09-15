@@ -561,6 +561,11 @@ search:
     top_n_per_article: 1
     # Unescape html strings to the readable one.
     unescape: false
+    # Enable pagination for search results
+    pagination:
+      enable: false
+      # Number of search results per page
+      hitsPerPage: 8
     CDN:
 
   # Docsearch
@@ -778,6 +783,7 @@ umami_analytics:
   enable: false
   # For self-hosted setups, configure the hostname of the Umami instance
   serverURL:
+  script_name: script.js
   website_id:
   option:
   UV_PV:
@@ -1071,7 +1077,7 @@ aplayerInject:
 # https://github.com/polonel/SnackBar
 # position: top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
-  enable: true
+  enable: false
   position: top-center
   # The background color of Toast Notification in light mode and dark mode
   bg_light: '#49b1f5'
@@ -1185,7 +1191,6 @@ CDN:
     # gitalk_css:
     # giscus:
     # instantpage:
-    # instantsearch:
     # katex:
     # katex_copytex:
     # lazyload:

@@ -274,6 +274,10 @@ module.exports = {
       preload: false,
       top_n_per_article: 1,
       unescape: false,
+      pagination: {
+        enable: false,
+        hitsPerPage: 8
+      },
       CDN: null
     },
     docsearch: {
@@ -400,6 +404,7 @@ module.exports = {
   umami_analytics: {
     enable: false,
     serverURL: null,
+    script_name: 'script.js',
     website_id: null,
     option: null,
     UV_PV: {
