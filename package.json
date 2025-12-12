@@ -9,12 +9,12 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "8.0.0"
+    "version": "8.1.1"
   },
   "dependencies": {
     "@barry-flynn/hexo-github-calendar": "^1.0.4",
     "gulp": "^5.0.1",
-    "hexo": "^8.0.0",
+    "hexo": "^8.1.1",
     "hexo-abbrlink": "^2.2.1",
     "hexo-butterfly-envelope": "^1.0.15",
     "hexo-butterfly-tag-plugins-plus": "^1.0.18",
@@ -32,13 +32,13 @@
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-tag-aplayer": "^3.0.4",
-    "hexo-theme-butterfly": "^5.5.1",
+    "hexo-theme-butterfly": "^5.5.3",
     "hexo-theme-landscape": "^1.1.0",
     "hexo-wordcount": "^6.0.1",
-    "workbox-build": "^7.3.0"
+    "workbox-build": "^7.4.0"
   },
   "devDependencies": {
-    "glob": "^11.0.3",
+    "glob": "^13.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-font-spider": "^0.3.6",
     "gulp-html-minifier-terser": "^7.1.0",
